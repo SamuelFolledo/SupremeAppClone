@@ -1,0 +1,494 @@
+{
+   "products": [{
+      "id": "B005I2GCXY",
+      "type": "top",
+      "regularPrice": 22.98,
+      "salePrice": 17.99,
+      "name": "Banana Bucket Floral Bomber Jacket Men Hip Hop Slim Fit Flowers Bomber Jacket Coat Men's Hooded Jackets",
+      "ageGroup": "36 months - 21 years",
+      "dimension": "54.3 x 30.7 x 56.7 inches",
+      "images": [
+         "T1-1.png", "T1-2.png", "T1-3.png", "T1-4.png", "T1-5.png"
+      ],
+      "manufacturerId": 1,
+      "manufacturerName": "Supreme",
+      "modelNumber": "B076MW2L3L",
+      "quantity": 15,
+      "rating": 4,
+      "weight": "4 pounds",
+      "summary": "Men Fashion Casual Floral Printed Long Sleeve Baseball Bomber Jackets Coat.",
+      "description1": "Floral printed, zipper fly closure,slim fit style.Material: cotton, polyester.",
+      "description2": "Perfect for daily wear,Season: warm spring, sunny autumn,Occasion: party, meeting, casual activity, formal, school, dating.",
+      "description3": "Note:US XS = Asian Tag L ,US S = Asian Tag XL ,US M = Asian Tag XXL .US L = Asian Tag XXXL , US XL = Asian Tag XXXXL"
+   },
+   {
+      "id": "B00IWQJA6E",
+      "type": "top",
+      "regularPrice": 38.50,
+      "salePrice": 34.99,
+      "name": "Riot Society Men's Long Sleeve Graphic Fashion T-Shirt",
+      "ageGroup": "24 months - 21 years",
+      "dimension": "17.2 x 6.6 x 13 inches",
+      "images": [
+         "T2-1.png", "T2-2.png", "T2-3.png", "T2-4.png", "T2-5.png"
+      ],
+      "manufacturerId": 2,
+      "manufacturerName": "Supreme",
+      "modelNumber": "B07873X83M",
+      "quantity": 0,
+      "rating": 5,
+      "weight": "1 pounds",
+      "summary": "Loved by all our customers, these long sleeves tees give your outfit a street-wear vibe that is both fashionable and fun. Choose from over 20 graphics, meticulously designed from start to finish in sunny California. Our well-crafted designs and high-quality material combine to create a vibrant yet comfortably fitted tee. Why the long face when you can have long sleeves!",
+      "description1": "Long Sleeve Crew Neck\nDesigned in California\nFeel: Soft Wash\nMachine Washable\nTagless Neck Label"
+   },
+   {
+      "id": "B00000JICB",
+      "type": "top",
+      "regularPrice": 30.28,
+      "salePrice": 11.14,
+      "name": "Christo Boys Casual Fashion Crewneck T Shirt Camo Tees Unisex Pullover Tops",
+      "ageGroup": "4 - 21 years",
+      "dimension": "8.5 x 6 x 10.8 inches",
+      "images": [
+         "T3-1.png", "T3-2.png", "T3-3.png", "T3-4.png", "T3-5.png"
+      ],
+      "manufacturerId": 3,
+      "manufacturerName": "Supreme",
+      "modelNumber": "B07FZ11L9V",
+      "quantity": 9,
+      "rating": 4,
+      "weight": "0.3 ounces",
+      "summary": "Most popular fashion style men's casual pattern graphic t-shirt with good quality fabric, stylish look and perfect for every ocassion",
+      "description1": "High quality cotton, polyester fabric make it comfortable and flexible",
+      "description2": "The unique design of the fashion, beautiful pattern print can not be missed.",
+      "description3": "It is also suitable for sports fitness, dancing, hiking and other occasions."
+   },
+   {
+      "id": "B019RP6OE4",
+      "type": "top",
+      "regularPrice": 22.99,
+      "salePrice": 19.99,
+      "name": "Supreme Savage Black Premium Athletic Fit T-Shirt",
+      "ageGroup": "36 months - 18 years",
+      "dimension": "20 x 8 x 16 inches",
+      "images": [ "T4-1.png", "T4-2.png" ],
+      "manufacturerId": 2,
+      "manufacturerName": "Supreme",
+      "modelNumber": "B07CZTK1ZC",
+      "quantity": 16,
+      "rating": 4,
+      "weight": "2.8 pounds",
+      "summary": "T-shirt is premium athletic fit, ultra-soft 4.5 ounce 100% ringspun cotton. Pre-shrunk. Double-needle stitching throughout and taped shoulder to shoulder for durability. 100% designed and printed in the U.S.A. by Downrange Apparel, no cheap iron-on graphics! Athletic fit, shirts will fit slightly snug through the shoulders and chest. Preshrunk but t-shirt will shrink slightly with the first wash. To avoid any shrinkage, simply wash the shirt in cold water and air dry it the first couple times you wash it.",
+      "description1": "Pre-shrunk, makes you look buff AF",
+      "description2": "Double-needle tailoring for durability",
+      "description3": "1x1 Ribbed crewneck with tear-away tag"
+   },
+   {
+      "id": "B01GI4CE9G",
+      "type": "top",
+      "regularPrice": 27.99,
+      "salePrice": 14.99,
+      "name": "SCREENSHOTBRAND Mens Hip Hop Longline Premium Tee - Pullover Hooded Fashion T-shirt",
+      "ageGroup": "6 years and up",
+      "dimension": "11.5 x 9.1 x 3.8 inches",
+      "images": [ "T5-1.png", "T5-2.png", "T5-3.png", "T5-4.png", "T5-5.png" ],
+      "manufacturerId": 4,
+      "manufacturerName": "Supreme",
+      "modelNumber": "B073TN882D",
+      "quantity": 7,
+      "rating": 3,
+      "weight": "12 ounces",
+      "summary": "SCREENSHOT BRAND is a New Line of Streetwear Fashion Company Launched Exclusively for E-Commerce. Our Inspiration is Based on Inner City Statements, and Cultural Movements. Even Though we are Under a Constant State of Evolution, SCREENSHOT BRAND Shares Deep Values like Originality, Quality, Attention to Details, and Exclusivity. Our Focus is to Provide our Customers with a Great Online Shopping Experience and Deliver High Standards of Customer Service.",
+      "description1": "STYLISH LONGLINE DESIGNER TEE: Urban inspired short sleeves hoodie instantly takes your style from bland to bold. With several styles and colors to match your closet for a modern and effortless fashion, these tops will feel great, look great, and turn a few heads"
+   },
+   {
+      "id": "B004RSGAQY",
+      "type": "top",
+      "regularPrice": 14.95,
+      "salePrice": 6.00,
+      "name": "tees geek Supreme Living Legend Established 1937 81st Birthday Gifts for Men T-Shirt",
+      "ageGroup": "12 month - 18 years",
+      "dimension": "24 x 10 x 13 inches",
+      "images": [ "T6-1.png", "T6-2.png", "T6-3.png" ],
+      "manufacturerId": 5,
+      "manufacturerName": "Supreme",
+      "modelNumber": "B07981NJPQ",
+      "quantity": 7,
+      "rating": 5,
+      "weight": "2.4 pounds",
+      "summary": "*** Proudly printed in the USA (not China) *** We have the largest selection of tees for you to choose from. You will not find this unique t-shirt anywhere else on the planet. Every single t-shirt is exceptionally made with high quality cotton, extremely soft and comfy to wear, and is guaranteed to last a lifetime. Also, each tee is professionally printed to enhance your t-shirt with an exceptional high definition graphic and ultra-smooth feel. Bring a smile to this world and wear your American printed t-shirt with pride! Buy it now and make it a great gift for yourself or that special someone",
+      "description1": "AUTHENTIC: Original Copyrighted design created by tees geek - an Amazon registered brand. Only tees geek alone is an authorized and exclusive seller for this product. Please beware of counterfeiters!",
+      "description2": "PROFESSIONALLY PRINTED: Utilizing latest advanced technology to enhance your t-shirt with an exceptional high definition graphic and ultra-smooth feel."
+   },
+   {
+      "id": "B005COPWZW",
+      "type": "top",
+      "regularPrice": 9.99,
+      "salePrice": 7.99,
+      "name": "Supreme Savage Box Logo Inspired Hoodie - 21 Savage",
+      "ageGroup": "12 month - 28 years",
+      "dimension": "24 x 10 x 13 inches",
+      "images": [ "T7-1.png" ],
+      "manufacturerId": 6,
+      "manufacturerName": "Supreme",
+      "modelNumber": "B01MY1L0XZ",
+      "quantity": 7,
+      "rating": 4,
+      "weight": "1.8 pounds",
+      "summary": "Small Navy-Blue Hoodie",
+      "description1": "This is one of the sickest and illest looking hoodie. Get it now fast!"
+   },
+   {
+      "id": "B00005JM5E",
+      "type": "top",
+      "regularPrice": 69.99,
+      "salePrice": 50.79,
+      "name": "AGORA Mt Fuji Pullover Jacket",
+      "ageGroup": "12 month - 21 years",
+      "dimension": "24 x 10 x 13 inches",
+      "images": [ "T8-1.png", "T8-2.png", "T8-3.png" ],
+      "manufacturerId": 6,
+      "manufacturerName": "Supreme",
+      "modelNumber": "B07C89B9GK",
+      "quantity": 8,
+      "rating": 5,
+      "weight": "3.7 pounds",
+      "summary": "Agora Mt Fuji Pullover Jacket",
+      "description1": "Patches on front and side, with printing on reverse.\nMatte finished nylon jacket"
+   },
+   
+   
+   
+   
+   
+   
+   
+   {
+      "id": "B000I0RQVI",
+      "type": "pants",
+      "regularPrice": 51.36,
+      "salePrice": 21.50,
+      "name": "adidas Youth Soccer Tiro 17 Training Pants",
+      "ageGroup": "12 month - 21 years",
+      "dimension": "18 x 10 x 16 inches",
+      "images": [ "P1-1.png", "P1-2.png", "P1-3.png" ],
+      "manufacturerId": 6,
+      "manufacturerName": "Adidas",
+      "modelNumber": "B01HO66F1U",
+      "quantity": 11,
+      "rating": 5,
+      "weight": "3.7 pounds",
+      "summary": "Train hard. Stay cool. These youth soccer training pants help your child warm up without overheating. Featuring ventilated climacool mesh inserts for maximum breathability, they keep the air moving while they stay on the pitch. A slim fit promotes easy footwork. 27 inches inseam",
+      "description1": "Front zip pockets provide storage",
+      "description2": "Drawcord on elastic waist allows for customized fit; mesh insert below back waist offers breathability",
+      "description3": "Ribbing on lower legs for a snug fit; tonal 3-stripes on sides; slim fit"
+   },
+   {
+      "id": "B00H5RYIBI",
+      "type": "pants",
+      "regularPrice": 19.95,
+      "salePrice": 14.95,
+      "name": "ToBeInStyle Women's Solid Print French Terry Jogger Pants",
+      "ageGroup": "48 month - 28 years",
+      "dimension": "22 x 11 x 16 inches",
+      "images": [ "P2-1.png", "P2-2.png", "P2-3.png" ],
+      "manufacturerId": 6,
+      "manufacturerName": "ToBeInStyle",
+      "modelNumber": "B019QVVWIW",
+      "quantity": 8,
+      "rating": 3,
+      "weight": "2.3 pounds",
+      "summary": "It’s about time you started wearing a more comfortable and well-made pair of pants. Try these Solid Print French Terry Jogger Pants. At such a great value, how can you resist?",
+      "description1": "Functional Front Pockets, Elastic Waistband, and Functional Drawstring Waistband"
+   },
+   {
+      "id": "B016V3CD0O",
+      "type": "pants",
+      "regularPrice": 11.40,
+      "salePrice": 7.94,
+      "name": "The Children's Place Baby Boys' Pull on Jeans",
+      "ageGroup": "4 years - 21 years",
+      "dimension": "34 x 14 x 12 inches",
+      "images": [ "P3-1.png", "P3-2.png", "P3-3.png" ],
+      "manufacturerId": 6,
+      "manufacturerName": "Old Navy",
+      "modelNumber": "B074MPP8TX",
+      "quantity": 9,
+      "rating": 4,
+      "weight": "2.9 pounds",
+      "summary": "An easy-on denim pair without the hassle of buttons",
+      "description1": "Value-prices clothes and apparel that are fun and easy to put together"
+   },
+   {
+      "id": "B0009NSCS0",
+      "type": "pants",
+      "regularPrice": 71.47,
+      "salePrice": 50.79,
+      "name": "Fox Racing 2018 180 RACE PANT RED- 32",
+      "ageGroup": "18 month - 24 years",
+      "dimension": "15.8 x 3.9 x 7.9 inches",
+      "images": [ "P4-1.png", "P4-2.png", "P4-3.png" ],
+      "manufacturerId": 6,
+      "manufacturerName": "Fox Racing",
+      "modelNumber": "19427-003-32",
+      "quantity": 23,
+      "rating": 5,
+      "weight": "3.1 pounds",
+      "summary": "Fox Racing 180 Race Pants Features: Rider Attack Position construction Heat and abrasion resistant leather knee panels Durable 600D polyester main body construction Stretch panels at knee, rear and crotch",
+      "description1": "Rider Attack Position construction",
+      "description2": "Heat and abrasion resistant leather knee panels"
+   },
+   {
+      "id": "B00BF4S1U6",
+      "type": "pants",
+      "regularPrice": 30.99,
+      "salePrice": 14.99,
+      "name": "Hemoon Men's Running Trousers",
+      "ageGroup": "24 month - 25 years",
+      "dimension": "11 x 7.5 x 3.5 inches",
+      "images": [ "P5-1.png", "P5-2.png", "P5-3.png" ],
+      "manufacturerId": 6,
+      "manufacturerName": "Hemoon",
+      "modelNumber": "B00VLCL58M",
+      "quantity": 12,
+      "rating": 4,
+      "weight": "3.2 pounds",
+      "summary": "With the goal of designing and producing items with basic but unique styles, HEMOON focuses on practicality and fashion, hoping to bring every customer a brand new experience.",
+      "description1": "Suitable for running,basketball,yoga and other outdoorliving"
+   },
+   {
+      "id": "B00OZYELYI",
+      "type": "pants",
+      "regularPrice": 34.99,
+      "salePrice": 19.99,
+      "name": "WT02 Men's Jogger Pants in Basic Solid Colors and Stretch Twill Fabric",
+      "ageGroup": "6 month - 23 years",
+      "dimension": "21 x 11 x 12 inches",
+      "images": [ "P6-1.png", "P6-2.png", "P6-3.png" ],
+      "manufacturerId": 6,
+      "manufacturerName": "WT02",
+      "modelNumber": "B0751593MG",
+      "quantity": 3,
+      "rating": 4,
+      "weight": "3.1 pounds",
+      "summary": "Long jogger basic twill pants in stretch twill fabric",
+      "description1": "Cotton-blend jogger pant featuring drawstring waistband and elasticized cuffs"
+   },
+   
+   
+   
+   {
+      "id": "2897650001",
+      "type": "shirts",
+      "regularPrice": 19.99,
+      "salePrice": 19.99,
+      "name": "Elevated. logo Black T-Shirt",
+      "ageGroup": "36 months - 21 years",
+      "dimension": "54.3 x 30.7 x 56.7 inches",
+      "images": [
+         "SH1-1.png"
+      ],
+      "manufacturerId": 1,
+      "manufacturerName": "Elevated.",
+      "modelNumber": "B076MW2L3B",
+      "quantity": 8,
+      "rating": 5,
+      "weight": "4 pounds",
+      "summary": "",
+      "description1": "White Elevated. middle logo black T-Shirt",
+      "description2": "",
+      "description3": "Note:US XS = Asian Tag L ,US S = Asian Tag XL ,US M = Asian Tag XXL .US L = Asian Tag XXXL , US XL = Asian Tag XXXXL"
+   },
+   
+   {
+      "id": "2897650002",
+      "type": "new",
+      "regularPrice": 19.99,
+      "salePrice": 19.99,
+      "name": "Reflect Elevated. Logo Black T-Shirt",
+      "ageGroup": "36 months - 21 years",
+      "dimension": "54.3 x 30.7 x 56.7 inches",
+      "images": [
+         "SH2-1.png"
+      ],
+      "manufacturerId": 1,
+      "manufacturerName": "Elevated.",
+      "modelNumber": "B076MW2L3H",
+      "quantity": 8,
+      "rating": 5,
+      "weight": "4 pounds",
+      "summary": "",
+      "description1": "White and red reflect Elevated. middle logo black T-Shirt",
+      "description2": "",
+      "description3": "Note:US XS = Asian Tag L ,US S = Asian Tag XL ,US M = Asian Tag XXL .US L = Asian Tag XXXL , US XL = Asian Tag XXXXL"
+   },
+   
+   
+   
+   
+   {
+      "id": "2897650001",
+      "type": "new",
+      "regularPrice": 19.99,
+      "salePrice": 19.99,
+      "name": "Elevated. logo Black T-Shirt",
+      "ageGroup": "36 months - 21 years",
+      "dimension": "54.3 x 30.7 x 56.7 inches",
+      "images": [
+         "SH1-1.png"
+      ],
+      "manufacturerId": 1,
+      "manufacturerName": "Elevated.",
+      "modelNumber": "B076MW2L3B",
+      "quantity": 8,
+      "rating": 5,
+      "weight": "4 pounds",
+      "summary": "",
+      "description1": "White Elevated. middle logo black T-Shirt",
+      "description2": "",
+      "description3": "Note:US XS = Asian Tag L ,US S = Asian Tag XL ,US M = Asian Tag XXL .US L = Asian Tag XXXL , US XL = Asian Tag XXXXL"
+   },
+   
+   {
+      "id": "2897650002",
+      "type": "shirts",
+      "regularPrice": 19.99,
+      "salePrice": 19.99,
+      "name": "Reflect Elevated. Logo Black T-Shirt",
+      "ageGroup": "36 months - 21 years",
+      "dimension": "54.3 x 30.7 x 56.7 inches",
+      "images": [
+         "SH2-1.png"
+      ],
+      "manufacturerId": 1,
+      "manufacturerName": "Elevated.",
+      "modelNumber": "B076MW2L3H",
+      "quantity": 8,
+      "rating": 5,
+      "weight": "4 pounds",
+      "summary": "",
+      "description1": "White and red reflect Elevated. middle logo black T-Shirt",
+      "description2": "",
+      "description3": "Note:US XS = Asian Tag L ,US S = Asian Tag XL ,US M = Asian Tag XXL .US L = Asian Tag XXXL , US XL = Asian Tag XXXXL"
+   },
+   
+   {
+      "id": "2897650003",
+      "type": "jackets",
+      "regularPrice": 74.95,
+      "salePrice": 74.95,
+      "name": "Elevated. Black Jacket",
+      "ageGroup": "36 months - 21 years",
+      "dimension": "54.3 x 30.7 x 56.7 inches",
+      "images": [
+         "JA1-1.png"
+      ],
+      "manufacturerId": 1,
+      "manufacturerName": "Elevated.",
+      "modelNumber": "B076MW2L3F",
+      "quantity": 8,
+      "rating": 5,
+      "weight": "4 pounds",
+      "summary": "",
+      "description1": "Elevated. Black Jacket",
+      "description2": "",
+      "description3": "Note:US XS = Asian Tag L ,US S = Asian Tag XL ,US M = Asian Tag XXL .US L = Asian Tag XXXL , US XL = Asian Tag XXXXL"
+   },
+   
+   {
+      "id": "2897650006",
+      "type": "top",
+      "regularPrice": 59.99,
+      "salePrice": 59.99,
+      "name": "Elevated. Black/Grey Hoodie ",
+      "ageGroup": "36 months - 21 years",
+      "dimension": "54.3 x 30.7 x 56.7 inches",
+      "images": [
+         "HD1-1.png"
+      ],
+      "manufacturerId": 1,
+      "manufacturerName": "Elevated.",
+      "modelNumber": "B076MW2L3",
+      "quantity": 8,
+      "rating": 5,
+      "weight": "4 pounds",
+      "summary": "",
+      "description1": "Elevated. Black/Grey Hoodie ",
+      "description2": "",
+      "description3": "Note:US XS = Asian Tag L ,US S = Asian Tag XL ,US M = Asian Tag XXL .US L = Asian Tag XXXL , US XL = Asian Tag XXXXL"
+   },
+   
+   {
+      "id": "2897650007",
+      "type": "sweatshirts",
+      "regularPrice": 39.99,
+      "salePrice": 39.99,
+      "name": "Elevated. Black Sweatshirts ",
+      "ageGroup": "36 months - 21 years",
+      "dimension": "54.3 x 30.7 x 56.7 inches",
+      "images": [
+         "SS1-1.png"
+      ],
+      "manufacturerId": 1,
+      "manufacturerName": "Elevated.",
+      "modelNumber": "B076MW2L3K",
+      "quantity": 8,
+      "rating": 5,
+      "weight": "4 pounds",
+      "summary": "",
+      "description1": "Elevated. Black ",
+      "description2": "",
+      "description3": "Note:US XS = Asian Tag L ,US S = Asian Tag XL ,US M = Asian Tag XXL .US L = Asian Tag XXXL , US XL = Asian Tag XXXXL"
+   },
+   
+   {
+      "id": "2897650000",
+      "type": "pants",
+      "regularPrice": 29.99,
+      "salePrice": 29.99,
+      "name": "Elevated. Black/Yellow Track pants ",
+      "ageGroup": "36 months - 21 years",
+      "dimension": "54.3 x 30.7 x 56.7 inches",
+      "images": [
+         "TP1-1.png"
+      ],
+      "manufacturerId": 1,
+      "manufacturerName": "Elevated.",
+      "modelNumber": "B076MW2L3M",
+      "quantity": 8,
+      "rating": 5,
+      "weight": "4 pounds",
+      "summary": "",
+      "description1": "Elevated. Black/Yellow Track pants ",
+      "description2": "",
+      "description3": "Note:US XS = Asian Tag L ,US S = Asian Tag XL ,US M = Asian Tag XXL .US L = Asian Tag XXXL , US XL = Asian Tag XXXXL"
+   },
+   
+   {
+      "id": "2897650009",
+      "type": "bags",
+      "regularPrice": 24.99,
+      "salePrice": 24.99,
+      "name": "Elevated. Black Shoulder Bag ",
+      "ageGroup": "36 months - 21 years",
+      "dimension": "54.3 x 30.7 x 56.7 inches",
+      "images": [
+         "SB1-1.png"
+      ],
+      "manufacturerId": 1,
+      "manufacturerName": "Elevated.",
+      "modelNumber": "B076MW2L3A",
+      "quantity": 8,
+      "rating": 5,
+      "weight": "4 pounds",
+      "summary": "",
+      "description1": "Elevated. Black Shoulder Bag ",
+      "description2": "",
+      "description3": "Note:US XS = Asian Tag L ,US S = Asian Tag XL ,US M = Asian Tag XXL .US L = Asian Tag XXXL , US XL = Asian Tag XXXXL"
+   }
+   
+
+   
+   ]
+}
+
