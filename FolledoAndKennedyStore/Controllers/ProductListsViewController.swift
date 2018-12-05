@@ -27,6 +27,7 @@ class ProductListsViewController: UIViewController, UIScrollViewDelegate {
 //   var selectedProduct: Product?
    
    var productType: String = ""
+   var productIndex: Int = 0
    
    weak var productDetailsController: ProductDetailsViewController?
    
@@ -63,6 +64,7 @@ class ProductListsViewController: UIViewController, UIScrollViewDelegate {
    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
       let selectedProduct: Product = clothesList[indexPath.row]
 //      productDetailsController?.product = selectedProduct
+      self.productIndex = indexPath.row
       
       performSegue(withIdentifier: "toThirdControllerSegue", sender: selectedProduct)
    }
@@ -70,6 +72,8 @@ class ProductListsViewController: UIViewController, UIScrollViewDelegate {
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
       if segue.identifier == "toThirdControllerSegue" {
          let vc = segue.destination as! ProductDetailsViewController
+         vc.productIndex = self.productIndex
+         vc.productType = self.productType
          vc.product = sender as? Product
       }
    }
