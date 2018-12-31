@@ -12,13 +12,6 @@ import UIKit
 public class DetailSummaryView: UIView {
    
    
-   @IBOutlet weak var colorsCollectionView: UICollectionView!
-   @IBOutlet weak var productsCollectionView: UICollectionView!
-   
-   @IBOutlet weak var colorsScrollView: UIScrollView!
-   @IBOutlet weak var productsScrollView: UIScrollView!
-   
-   
    @IBOutlet weak var manufacturerLabel: UILabel! //PB ep68 7mins since conte
    
    @IBOutlet weak var productNameLabel: UILabel! //PB ep68 7mins
@@ -53,18 +46,6 @@ public class DetailSummaryView: UIView {
    }
    
    internal func updateView(with product: Product) { //PB ep68 10mins
-   
-//      guard let detailView = detailView else { return }
-//      print("THE SELECTED PRODUCT's name IS = \(String(describing: product.name))")
-      
-//      colorsScrollView.delegate = self
-//      productsScrollView.delegate = self
-//
-//      colorsCollectionView.delegate = self
-//      colorsCollectionView.dataSource = self
-//
-//      productsCollectionView.delegate = self
-//      productsCollectionView.dataSource = self
       
       //make sure no previous still exists in the currentView
       buttonContainerView?.removeFromSuperview() //PB ep70 23mins this guarantees that the buttonContainerView will be reset

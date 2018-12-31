@@ -174,6 +174,17 @@ class ProductDetailsViewController: UIViewController {
       self.dismiss(animated: false, completion: nil)
    }
 	
+//MARK: IBActions
+   @IBAction func checkoutButtonTapped(_ sender: Any) {
+      let viewController: UIViewController = UIStoryboard(name: "CheckoutSB", bundle: nil).instantiateViewController(withIdentifier: "checkoutVC")
+      self.present(viewController, animated: false, completion: nil)
+   }
+   
+   @IBAction func cartButtonTapped(_ sender: Any) {
+      let viewController: UIViewController = UIStoryboard(name: "CartSB", bundle: nil).instantiateViewController(withIdentifier: "cartVC")
+      self.present(viewController, animated: false, completion: nil)
+   }
+   
    @IBAction func backButtonTapped(_ sender: Any) {
       self.dismiss(animated: false, completion: nil)
    }
