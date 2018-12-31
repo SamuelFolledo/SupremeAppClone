@@ -70,7 +70,6 @@
                                 <color key="tintColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="xpe-VH-vhH" firstAttribute="centerY" secondItem="wnR-nE-ary" secondAttribute="centerY" id="9Y9-L0-8F3"/>
-                                    <constraint firstItem="xpe-VH-vhH" firstAttribute="leading" secondItem="wnR-nE-ary" secondAttribute="trailing" constant="85" id="HXI-Qz-fY9"/>
                                     <constraint firstAttribute="trailing" secondItem="lAb-lS-sHt" secondAttribute="trailing" constant="8" id="J8A-79-Tbj"/>
                                     <constraint firstItem="wnR-nE-ary" firstAttribute="leading" secondItem="tuh-kf-4z5" secondAttribute="leading" constant="8" id="Qe8-RO-ZnH"/>
                                     <constraint firstItem="wnR-nE-ary" firstAttribute="centerY" secondItem="tuh-kf-4z5" secondAttribute="centerY" priority="500" id="fC7-aW-XMF"/>

@@ -198,6 +198,9 @@ class ProductDetailsViewController: UIViewController {
       
       updateProductDetailView(with: newProduct)
       updateProductImages(with: newProduct)
+      
+      self.selectedProductIndexPath?.row = self.productIndex
+      
       self.colorsCollectionView.reloadData()
       self.productsCollectionView.reloadData()
    }

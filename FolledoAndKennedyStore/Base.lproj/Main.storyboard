@@ -1113,7 +1113,6 @@
                                     <constraint firstItem="IZ1-Ie-8eV" firstAttribute="leading" secondItem="Jc1-nE-gdT" secondAttribute="trailing" constant="8" id="jmx-3k-djV"/>
                                     <constraint firstAttribute="bottom" secondItem="Tpp-YQ-OaG" secondAttribute="bottom" constant="8" id="lTH-qc-569"/>
                                     <constraint firstItem="Jc1-nE-gdT" firstAttribute="centerY" secondItem="Tpp-YQ-OaG" secondAttribute="centerY" id="rFt-po-Vf8"/>
-                                    <constraint firstItem="Jc1-nE-gdT" firstAttribute="leading" secondItem="Tpp-YQ-OaG" secondAttribute="trailing" constant="85" id="wgg-sf-vJz"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="csD-ac-ITV" userLabel="navigationSeparator View">
@@ -1149,7 +1148,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YVR-c4-wGe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1991" y="-1614"/>
+            <point key="canvasLocation" x="3012" y="-855"/>
         </scene>
     </scenes>
     <resources>
