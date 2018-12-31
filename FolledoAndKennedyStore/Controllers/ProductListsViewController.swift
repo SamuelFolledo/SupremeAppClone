@@ -24,7 +24,7 @@ class ProductListsViewController: UIViewController, UIScrollViewDelegate {
    var counter: Int = 0
    
    var clothesList = [Product]()
-//   var selectedProduct: Product?
+   var selectedProduct: Product?
    
    var productType: String = ""
    var productIndex: Int = 0
@@ -62,19 +62,23 @@ class ProductListsViewController: UIViewController, UIScrollViewDelegate {
    }
    
    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-      let selectedProduct: Product = clothesList[indexPath.row]
-//      productDetailsController?.product = selectedProduct
+//      let selectedProduct: Product = clothesList[indexPath.row]
       self.productIndex = indexPath.row
+      selectedProduct = clothesList[self.productIndex]
+//      productDetailsController?.product = selectedProduct
       
-      performSegue(withIdentifier: "toThirdControllerSegue", sender: selectedProduct)
+      performSegue(withIdentifier: "toThirdControllerSegue", sender: self.selectedProduct)
    }
    
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
       if segue.identifier == "toThirdControllerSegue" {
          let vc = segue.destination as! ProductDetailsViewController
          vc.productIndex = self.productIndex
-         vc.productType = self.productType
+//         vc.productType = self.productType
          vc.product = sender as? Product
+         
+//         let selectedProductIndex: IndexPath = IndexPath(row: self.productIndex, section: 0)
+//         vc.selectedProductIndexPath = selectedProductIndex
       }
    }
    

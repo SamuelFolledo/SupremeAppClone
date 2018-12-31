@@ -10,6 +10,7 @@
       "images": [
          "T1-1.png", "T1-2.png", "T1-3.png", "T1-4.png", "T1-5.png"
       ],
+      "colors": ["black", "white", "blue", "red", "yellow"],
       "manufacturerId": 1,
       "manufacturerName": "Supreme",
       "modelNumber": "B076MW2L3L",
@@ -32,6 +33,7 @@
       "images": [
          "T2-1.png", "T2-2.png", "T2-3.png", "T2-4.png", "T2-5.png"
       ],
+      "colors": ["black", "white", "blue", "red", "yellow"],
       "manufacturerId": 2,
       "manufacturerName": "Supreme",
       "modelNumber": "B07873X83M",
@@ -52,6 +54,7 @@
       "images": [
          "T3-1.png", "T3-2.png", "T3-3.png", "T3-4.png", "T3-5.png"
       ],
+      "colors": ["black", "white", "blue", "red", "yellow"],
       "manufacturerId": 3,
       "manufacturerName": "Supreme",
       "modelNumber": "B07FZ11L9V",
@@ -72,6 +75,7 @@
       "ageGroup": "36 months - 18 years",
       "dimension": "20 x 8 x 16 inches",
       "images": [ "T4-1.png", "T4-2.png" ],
+      "colors": ["black", "white"],
       "manufacturerId": 2,
       "manufacturerName": "Supreme",
       "modelNumber": "B07CZTK1ZC",
@@ -92,6 +96,7 @@
       "ageGroup": "6 years and up",
       "dimension": "11.5 x 9.1 x 3.8 inches",
       "images": [ "T5-1.png", "T5-2.png", "T5-3.png", "T5-4.png", "T5-5.png" ],
+      "colors": ["black", "white", "blue", "red", "yellow"],
       "manufacturerId": 4,
       "manufacturerName": "Supreme",
       "modelNumber": "B073TN882D",
@@ -110,6 +115,7 @@
       "ageGroup": "12 month - 18 years",
       "dimension": "24 x 10 x 13 inches",
       "images": [ "T6-1.png", "T6-2.png", "T6-3.png" ],
+      "colors": ["black", "white", "blue"],
       "manufacturerId": 5,
       "manufacturerName": "Supreme",
       "modelNumber": "B07981NJPQ",
@@ -129,6 +135,7 @@
       "ageGroup": "12 month - 28 years",
       "dimension": "24 x 10 x 13 inches",
       "images": [ "T7-1.png" ],
+      "colors": ["dark blue"],
       "manufacturerId": 6,
       "manufacturerName": "Supreme",
       "modelNumber": "B01MY1L0XZ",
@@ -147,6 +154,7 @@
       "ageGroup": "12 month - 21 years",
       "dimension": "24 x 10 x 13 inches",
       "images": [ "T8-1.png", "T8-2.png", "T8-3.png" ],
+      "colors": ["black", "white", "blue"],
       "manufacturerId": 6,
       "manufacturerName": "Supreme",
       "modelNumber": "B07C89B9GK",
@@ -172,6 +180,7 @@
       "ageGroup": "12 month - 21 years",
       "dimension": "18 x 10 x 16 inches",
       "images": [ "P1-1.png", "P1-2.png", "P1-3.png" ],
+      "colors": ["black", "white", "blue"],
       "manufacturerId": 6,
       "manufacturerName": "Adidas",
       "modelNumber": "B01HO66F1U",
@@ -192,6 +201,7 @@
       "ageGroup": "48 month - 28 years",
       "dimension": "22 x 11 x 16 inches",
       "images": [ "P2-1.png", "P2-2.png", "P2-3.png" ],
+      "colors": ["black", "white", "blue"],
       "manufacturerId": 6,
       "manufacturerName": "ToBeInStyle",
       "modelNumber": "B019QVVWIW",
@@ -210,6 +220,7 @@
       "ageGroup": "4 years - 21 years",
       "dimension": "34 x 14 x 12 inches",
       "images": [ "P3-1.png", "P3-2.png", "P3-3.png" ],
+      "colors": ["black", "white", "blue"],
       "manufacturerId": 6,
       "manufacturerName": "Old Navy",
       "modelNumber": "B074MPP8TX",
@@ -228,6 +239,7 @@
       "ageGroup": "18 month - 24 years",
       "dimension": "15.8 x 3.9 x 7.9 inches",
       "images": [ "P4-1.png", "P4-2.png", "P4-3.png" ],
+      "colors": ["black", "white", "blue"],
       "manufacturerId": 6,
       "manufacturerName": "Fox Racing",
       "modelNumber": "19427-003-32",
@@ -247,6 +259,7 @@
       "ageGroup": "24 month - 25 years",
       "dimension": "11 x 7.5 x 3.5 inches",
       "images": [ "P5-1.png", "P5-2.png", "P5-3.png" ],
+      "colors": ["black", "white", "blue"],
       "manufacturerId": 6,
       "manufacturerName": "Hemoon",
       "modelNumber": "B00VLCL58M",
@@ -265,6 +278,7 @@
       "ageGroup": "6 month - 23 years",
       "dimension": "21 x 11 x 12 inches",
       "images": [ "P6-1.png", "P6-2.png", "P6-3.png" ],
+      "colors": ["black", "white", "blue"],
       "manufacturerId": 6,
       "manufacturerName": "WT02",
       "modelNumber": "B0751593MG",
@@ -288,6 +302,7 @@
       "images": [
          "SH1-1.png"
       ],
+      "colors": ["black"],
       "manufacturerId": 1,
       "manufacturerName": "Elevated.",
       "modelNumber": "B076MW2L3B",
@@ -311,6 +326,7 @@
       "images": [
          "SH2-1.png"
       ],
+      "colors": ["black"],
       "manufacturerId": 1,
       "manufacturerName": "Elevated.",
       "modelNumber": "B076MW2L3H",
@@ -337,6 +353,7 @@
       "images": [
          "SH1-1.png"
       ],
+      "colors": ["black"],
       "manufacturerId": 1,
       "manufacturerName": "Elevated.",
       "modelNumber": "B076MW2L3B",
@@ -360,6 +377,7 @@
       "images": [
          "SH2-1.png"
       ],
+      "colors": ["black"],
       "manufacturerId": 1,
       "manufacturerName": "Elevated.",
       "modelNumber": "B076MW2L3H",
@@ -383,6 +401,7 @@
       "images": [
          "JA1-1.png"
       ],
+      "colors": ["black"],
       "manufacturerId": 1,
       "manufacturerName": "Elevated.",
       "modelNumber": "B076MW2L3F",
@@ -406,6 +425,7 @@
       "images": [
          "HD1-1.png"
       ],
+      "colors": ["black"],
       "manufacturerId": 1,
       "manufacturerName": "Elevated.",
       "modelNumber": "B076MW2L3",
@@ -429,6 +449,7 @@
       "images": [
          "SS1-1.png"
       ],
+      "colors": ["black"],
       "manufacturerId": 1,
       "manufacturerName": "Elevated.",
       "modelNumber": "B076MW2L3K",
@@ -452,6 +473,7 @@
       "images": [
          "TP1-1.png"
       ],
+      "colors": ["black"],
       "manufacturerId": 1,
       "manufacturerName": "Elevated.",
       "modelNumber": "B076MW2L3M",
@@ -475,6 +497,7 @@
       "images": [
          "SB1-1.png"
       ],
+      "colors": ["black"],
       "manufacturerId": 1,
       "manufacturerName": "Elevated.",
       "modelNumber": "B076MW2L3A",

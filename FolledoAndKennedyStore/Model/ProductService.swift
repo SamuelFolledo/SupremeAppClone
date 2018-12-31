@@ -27,6 +27,20 @@ struct ProductService { //PB ep11 4mins
       }
    }
    
+   internal static func productsColors(productName name: String) -> [Product] { //PB ep11 6mins this method takes a category and returns an array of Product entity //internal access modifier which will allow access from within the app from outside of ProductService class itself //static allow us to call this product function without the need to create an instance
+      let request: NSFetchRequest<Product> = Product.fetchRequest() //PB ep11 6mins
+      request.predicate = NSPredicate(format: "name == %@", name) //PB ep11 7mins we //predicate = The predicate instance constrains the selection of objects the NSFetchRequest instance is to fetch. //NSPredicate = A definition of logical conditions used to constrain a search either for a fetch or for in-memory filtering. //format is type equal the value being passed by the input argument which is type
+      
+      do { //PB ep11 8mins
+         
+         let products = try self.managedObjectContext.fetch(request) //PB ep11 9mins we create the products, try and execute the request. The result of this product is a form of an array of products
+         return products
+         
+      } catch let error as NSError { //PB ep11 8mins
+         fatalError("Error in getting product list \(error.localizedDescription)") //PB ep11 8mins
+      }
+   }
+   
    
    
    internal static func browse() -> [Product] { //PB ep64 2mins

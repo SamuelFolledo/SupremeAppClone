@@ -130,6 +130,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                var mainImageName: String? //PB ep9 17mins
                
                if let imageNames = productData["images"] { //PB ep9 18mins check if json has the images or not
+//imageNames
                   for imageName in imageNames as! NSArray { //PB ep9 18mins cast it as NSArray so we can loop through it
                      let productImage = ProductImage(context: managedObjectContext) //PB ep9 19mins no we need to instantiate our productImage to be able to store these image coming frm the .json
                      
@@ -151,6 +152,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                   product.productImages = productImages.copy() as? NSSet //PB ep9 29mins so after the looping is done we want to store those productImages and associate those images with our product entity //PB ep9 30mins because the productImages is an NSMutableSet, we need to make it an NSSet again by copying it and converting back to NSSet
                }
                product.mainImage = mainImageName //PB ep9 30mins then we store the mainImage only
+               
+//Product ColorName
+               let productColors = product.productImages?.mutableCopy() as! NSMutableSet
+               var mainColorName: String?
+               
+               if let colorNames = productData["colors"] {
+                  for colorName in colorNames as! NSArray {
+                     let productImage = ProductImage(context: managedObjectContext)
+                     let currentColorName = colorName as? String
+                     productImage.color = currentColorName
+                     
+                     if mainColorName == nil {
+                        mainColorName = currentColorName
+                     }
+                     productImages.add(productImage)
+                  }
+                  product.productImages = productColors.copy() as? NSSet
+               }
+               product.mainColor = mainColorName
+               
                
                //Product Summary
                if let summary = productData["summary"] { //PB ep9 30mins
