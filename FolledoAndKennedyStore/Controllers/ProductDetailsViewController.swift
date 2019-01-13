@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProductDetailsViewController: UIViewController {
+class ProductDetailsViewController: UIViewController, UITextFieldDelegate {
    
    @IBOutlet weak var detailView: DetailSummaryView!
    
@@ -17,6 +17,8 @@ class ProductDetailsViewController: UIViewController {
    @IBOutlet weak var checkOutButton: UIButton!
    @IBOutlet weak var nextProductButton: UIButton!
    @IBOutlet weak var keepShoppingButton: UIButton!
+   @IBOutlet weak var sizeTextField: UITextField!
+   var sizePicker = UIPickerView()
    
    @IBOutlet weak var colorsCollectionView: UICollectionView!
    @IBOutlet weak var productsCollectionView: UICollectionView!
@@ -59,6 +61,8 @@ class ProductDetailsViewController: UIViewController {
    
    public var detailSummary: DetailSummary?
    
+   var quantity = 1 //PB ep74 8mins will store the TVC's quantity passed down from the delegate method. First time will be 1
+   var shoppingCart = ShoppingCart.sharedInstance //PB ep76 12mins this guarantee that the shoppingCart property will have the singleton of the ShoppingCart class
    
 	
    
@@ -124,7 +128,7 @@ class ProductDetailsViewController: UIViewController {
    
    
    private func setUpViews() {
-      timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(animateTopLogo), userInfo: nil, repeats: true)
+//      timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(animateTopLogo), userInfo: nil, repeats: true)
       
       cartButton.backgroundColor = .clear
       cartButton.layer.cornerRadius = 5
@@ -141,6 +145,24 @@ class ProductDetailsViewController: UIViewController {
       colorsCollectionView.dataSource = self
       productsCollectionView.delegate = self
       productsCollectionView.dataSource = self
+      
+   //size TextField
+      sizeTextField.delegate = self
+      sizePicker.delegate = self
+      let toolBar = UIToolbar()
+      toolBar.sizeToFit()
+      let flexibleBar = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+      let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.handleEndEditing(_:)))
+      toolBar.setItems([flexibleBar, doneButton], animated: true)
+      
+      sizeTextField.inputAccessoryView = toolBar
+      sizeTextField.inputView = sizePicker
+      sizeTextField.backgroundColor = .clear
+   }
+   
+   func textFieldDidBeginEditing(_ textField: UITextField) {
+      sizeTextField.tintColor = .clear
+      sizeTextField.textColor = .clear
    }
    
    
@@ -153,7 +175,7 @@ class ProductDetailsViewController: UIViewController {
    }
    
    
-   //MARK: Status Bar like Time, battery carrier etc.
+//MARK: Status Bar like Time, battery carrier etc.
    override var prefersStatusBarHidden: Bool {
       return false
    }
@@ -161,7 +183,12 @@ class ProductDetailsViewController: UIViewController {
       return .lightContent
    }
    
-	
+   
+//MARK: Helpers
+   @objc func handleEndEditing(_ gesture: UITapGestureRecognizer) {
+      self.view.endEditing(true)
+   }
+
    
    @objc func animateTopLogo() {
       topLogoImageView.image = UIImage(named: "supremeLogo\(counter)")
@@ -175,6 +202,19 @@ class ProductDetailsViewController: UIViewController {
    }
 	
 //MARK: IBActions
+   @IBAction func addToCartButtonTapped(_ sender: Any) { //PB ep76 10mins this method adds the currently selected/displayed product to our cart. We can get the product from product property
+      if let product = product { //PB ep76 11mins we can get that product from our property
+         shoppingCart.add(product: product, quantity: self.quantity) //PB ep76 12mins before we can invoke our add function, we need to get the instance of ShoppingCart //add the product and our quantity
+         
+         //Reset the quantity
+         self.quantity = 1 //PB ep76 13mins
+         DispatchQueue.main.async { [unowned self] in //PB ep76 21mins go back to the main thread and update our label. //PB ep76 23mins [weak self] in is changed to [unowned self] in, which basically says "I am not going to create a strong reference to this VC, but at the same time, I guarantee that self is not going to be nil". This allows us to not have an optional text in our string
+            self.cartButton.setTitle("\(String(describing: self.shoppingCart.totalItem()))", for: .normal) //PB ep76 22mins
+         }
+      }
+   }
+   
+   
    @IBAction func checkoutButtonTapped(_ sender: Any) {
       let viewController: UIViewController = UIStoryboard(name: "CheckoutSB", bundle: nil).instantiateViewController(withIdentifier: "checkoutVC")
       self.present(viewController, animated: false, completion: nil)
@@ -199,7 +239,8 @@ class ProductDetailsViewController: UIViewController {
       updateProductDetailView(with: newProduct)
       updateProductImages(with: newProduct)
       
-      self.selectedProductIndexPath?.row = self.productIndex
+      self.selectedProductIndexPath?.row = self.productIndex //recently added
+      self.product = clothesCollection[selectedProductIndexPath!.row]
       
       self.colorsCollectionView.reloadData()
       self.productsCollectionView.reloadData()
@@ -217,6 +258,9 @@ class ProductDetailsViewController: UIViewController {
 	
 }
 
+
+
+// --------------------------------- EXTENSIONS -------------------------------------
 
 extension ProductDetailsViewController: UICollectionViewDataSource {
    func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -294,8 +338,8 @@ extension ProductDetailsViewController: UICollectionViewDataSource {
    }
    
    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-      
       switch collectionView {
+         
       case self.colorsCollectionView: //PB ep11 13mins
          selectedColorIndexPath = indexPath
          let productImageName = productOtherImages[indexPath.row]
@@ -306,16 +350,17 @@ extension ProductDetailsViewController: UICollectionViewDataSource {
          let newProduct: Product = clothesCollection[indexPath.row]
          updateProductDetailView(with: newProduct) //update text in detailView
          updateProductImages(with: newProduct) //update images of colorsCollectionView
-         
          selectedProductIndexPath = indexPath
-         selectedColorIndexPath?.row = 0
+         self.product = clothesCollection[selectedProductIndexPath!.row]
+         
+         selectedColorIndexPath?.row = 0 //put the selectedColorIndexpath back to 0
+         
+         self.productIndex = indexPath.row //set productIndex, new
          
       default: //PB ep11 13mins
          return //PB ep11 13mins dont display anything
       }
-      
    }
-   
 }
 
 extension ProductDetailsViewController: UICollectionViewDelegate {
@@ -333,3 +378,32 @@ extension ProductDetailsViewController: UIScrollViewDelegate {
       }
    }
 }
+
+
+//MARK: PickerView DataSource and Delegate
+extension ProductDetailsViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+   func numberOfComponents(in pickerView: UIPickerView) -> Int {
+      return 1
+   }
+   
+   func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+      if pickerView == sizePicker { return sizePickerValues.count }
+      
+      return 0 //RE ep.56 5mins
+   }
+   
+   func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+      if pickerView == sizePicker { return sizePickerValues[row] }
+      
+      return ""
+   }
+   
+   
+   func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+      //      var rowValue = row
+      if pickerView == sizePicker {
+         detailView.sizeButton.setTitle(String(sizePickerValues[row]), for: .normal)
+      }
+   }
+}
+

@@ -47,7 +47,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
    
    
    private func setUpViews() {
-      timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(animateTopLogo), userInfo: nil, repeats: true)
+//      timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(animateTopLogo), userInfo: nil, repeats: true)
       
       cartButton.backgroundColor = .clear
       cartButton.layer.cornerRadius = 5
@@ -66,13 +66,15 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
    }
    
    
-   
-   @IBAction func cartButtonTapped(_ sender: Any) {
-      
+//MARK: IBActions
+   @IBAction func checkoutButtonTapped(_ sender: Any) {
+      let viewController: UIViewController = UIStoryboard(name: "CheckoutSB", bundle: nil).instantiateViewController(withIdentifier: "checkoutVC")
+      self.present(viewController, animated: false, completion: nil)
    }
    
-   @IBAction func checkOutButtonTapped(_ sender: Any) {
-      
+   @IBAction func cartButtonTapped(_ sender: Any) {
+      let viewController: UIViewController = UIStoryboard(name: "CartSB", bundle: nil).instantiateViewController(withIdentifier: "cartVC")
+      self.present(viewController, animated: false, completion: nil)
    }
    
 //MARK: Status Bar like Time, battery carrier etc.

@@ -89,7 +89,7 @@ class ProductListsViewController: UIViewController, UIScrollViewDelegate {
    }
    
    private func setUpViews() {
-      timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(animateTopLogo), userInfo: nil, repeats: true)
+//      timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(animateTopLogo), userInfo: nil, repeats: true)
       
       cartButton.backgroundColor = .clear
       cartButton.layer.cornerRadius = 5
@@ -134,6 +134,18 @@ class ProductListsViewController: UIViewController, UIScrollViewDelegate {
    @objc func handleLogoDismiss(_ gesture: UITapGestureRecognizer) {
       self.dismiss(animated: false, completion: nil)
    }
+   
+//MARK: IBActions
+   @IBAction func checkoutButtonTapped(_ sender: Any) {
+      let viewController: UIViewController = UIStoryboard(name: "CheckoutSB", bundle: nil).instantiateViewController(withIdentifier: "checkoutVC")
+      self.present(viewController, animated: false, completion: nil)
+   }
+   
+   @IBAction func cartButtonTapped(_ sender: Any) {
+      let viewController: UIViewController = UIStoryboard(name: "CartSB", bundle: nil).instantiateViewController(withIdentifier: "cartVC")
+      self.present(viewController, animated: false, completion: nil)
+   }
+   
    
    @IBAction func backButtonTapped(_ sender: Any) {
       self.dismiss(animated: false, completion: nil)

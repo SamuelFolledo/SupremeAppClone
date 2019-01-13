@@ -18,6 +18,7 @@ public class DetailSummaryView: UIView {
    @IBOutlet weak var dealPriceLabel: UILabel! //PB ep68 7mins
    @IBOutlet weak var qtyLeftLabel: UILabel! //PB ep68 7mins
    @IBOutlet weak var sizeButton: UIButton!
+   
    @IBOutlet weak var descriptionLabel: UILabel!
    @IBOutlet weak var addToCartButton: UIButton! //PB ep68 7mins
    @IBOutlet weak var productImageView: UIImageView! //PB ep68 7mins
@@ -77,7 +78,7 @@ public class DetailSummaryView: UIView {
       if product.quantity > 0 { //PB ep69 11mins
          qtyLeftLabel.isHidden = false //PB ep69 13mins unhide it
          sizeButton.alpha = 1
-         addToCartButton.setTitle("add to cart: 1", for: .normal)
+         addToCartButton.setTitle("add to cart", for: .normal)
          
          let quantity = product.quantity
          if quantity == 1 {

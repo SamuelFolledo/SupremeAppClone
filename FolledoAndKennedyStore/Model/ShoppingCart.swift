@@ -8,10 +8,10 @@
 
 import Foundation
 
-//@objc protocol ShoppingCartDelegate: class { //PB ep81 0mins class type protocol, this delegate will have 2 functions
-//   func updateTotalCartItem() //PB ep81 1mins
-//   @objc optional func confirmRemoval(forProduct product: Product, itemIndexPath: IndexPath) //PB ep81 1-2mins EXAMPLE of an optional delegate function //IMPORTANT to add @objc protocol instead of regular protocol
-//}
+@objc protocol ShoppingCartDelegate: class { //PB ep81 0mins class type protocol, this delegate will have 2 functions
+   func updateTotalCartItem() //PB ep81 1mins
+   @objc optional func confirmRemoval(forProduct product: Product, itemIndexPath: IndexPath) //PB ep81 1-2mins EXAMPLE of an optional delegate function //IMPORTANT to add @objc protocol instead of regular protocol
+}
 
 
 
