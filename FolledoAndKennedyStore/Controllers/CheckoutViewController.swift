@@ -29,7 +29,6 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate {
    @IBOutlet weak var countryTextField: UITextField!
    @IBOutlet weak var rememberAddressButton: UIButton!
    
-   
    @IBOutlet weak var cardNumberTextField: UITextField!
    @IBOutlet weak var cardMonthTextField: UITextField!
    @IBOutlet weak var cardYearTextField: UITextField!
@@ -42,11 +41,28 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate {
    
    
    @IBOutlet weak var captchaImageView: UIImageView!
+   @IBOutlet weak var spinningCaptchaImageView: UIImageView!
    
    @IBOutlet weak var captchaActivityIndicator: UIActivityIndicatorView!
    @IBOutlet weak var cancelButton: UIButton!
    @IBOutlet weak var processPaymentButton: UIButton!
    
+   //error labels
+   @IBOutlet weak var nameErrorLabel: UILabel!
+   @IBOutlet weak var emailErrorLabel: UILabel!
+   @IBOutlet weak var telephoneErrorLabel: UILabel!
+   @IBOutlet weak var addressErrorLabel: UILabel!
+   @IBOutlet weak var aptUnitErrorLabel: UILabel!
+   @IBOutlet weak var zipErrorLabel: UILabel!
+   @IBOutlet weak var cityErrorLabel: UILabel!
+   @IBOutlet weak var stateErrorLabel: UILabel!
+   @IBOutlet weak var countryErrorLabel: UILabel!
+   @IBOutlet weak var cardNumberErrorLabel: UILabel!
+   @IBOutlet weak var cardMonthErrorLabel: UILabel!
+   @IBOutlet weak var cardYearErrorLabel: UILabel!
+   @IBOutlet weak var cardCvvErrorLabel: UILabel!
+   @IBOutlet weak var agreeErrorLabel: UILabel!
+   @IBOutlet weak var captchaErrorLabel: UILabel!
    
    
 //MARK: Properties
@@ -71,9 +87,6 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate {
       
       setUpViews()
       
-      let tap = UITapGestureRecognizer(target: self, action: #selector(handleLogoDismiss))
-      self.topLogoImageView.isUserInteractionEnabled = true
-      self.topLogoImageView.addGestureRecognizer(tap)
       
       
       
@@ -96,19 +109,28 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate {
    }
    
    private func updateValuesOfAllViews() {
+      let addressButtonImage: String = rememberAddressButtonValue ? "check-box" : "blank-check-box"
+      rememberAddressButton.setImage(UIImage(named: addressButtonImage), for: .normal)
+      
+      let agreeButtonImage: String = agreeButtonValue ? "check-box" : "blank-check-box"
+      agreeButton.setImage(UIImage(named: agreeButtonImage), for: .normal)
+      
+      let imageName: String = self.captchaValue ? "captcha2" : "captcha"
+      self.captchaImageView.image = UIImage(named: imageName)
       
       subtotalLabel.text = "\(shoppingCart.totalItemCost().currencyFormatter)"
       shipLabel.text = "$10.00"
       orderTotalLabel.text = "\((shoppingCart.totalItemCost() + 10).currencyFormatter)"
-      
       captchaActivityIndicator.isHidden = true
-      
    }
    
    
 //MARK: Methods
    private func setUpViews() {
 //      timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(animateTopLogo), userInfo: nil, repeats: true)
+      let tap = UITapGestureRecognizer(target: self, action: #selector(handleLogoDismiss))
+      self.topLogoImageView.isUserInteractionEnabled = true
+      self.topLogoImageView.addGestureRecognizer(tap)
       
       cartButton.backgroundColor = .clear
       cartButton.layer.cornerRadius = 5
@@ -124,30 +146,6 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate {
       processPaymentButton.layer.cornerRadius = 5
       
       updateValuesOfAllViews()
-      
-      if agreeButtonValue == false {
-         agreeButtonValue = true
-         agreeButton.setImage(UIImage(named: "blank-check-box"), for: .normal)
-      } else {
-         agreeButtonValue = false
-         agreeButton.setImage(UIImage(named: "check-box"), for: .normal)
-      }
-      
-      if rememberAddressButtonValue == false {
-         rememberAddressButtonValue = true
-         rememberAddressButton.setImage(UIImage(named: "blank-check-box"), for: .normal)
-      } else {
-         rememberAddressButtonValue = false
-         rememberAddressButton.setImage(UIImage(named: "check-box"), for: .normal)
-      }
-      
-      if captchaValue == false {
-         captchaValue = true
-         captchaImageView.image = UIImage(named: "captcha")
-      } else {
-         captchaValue = false
-         captchaImageView.image = UIImage(named: "captcha2")
-      }
       
       let scrollViewTap = UITapGestureRecognizer(target: self, action: #selector(handleEndEditing(_:)))
       self.mainScrollView.addGestureRecognizer(scrollViewTap)
@@ -214,6 +212,14 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate {
 //      yearArray.reverse() //RE ep.59 5mins start from 2030 and not in 1800
    }
    
+   private func rotateCaptcha(degrees: Double) {
+      UIView.animate(withDuration: 2, animations: {
+         self.spinningCaptchaImageView.transform = CGAffineTransform(rotationAngle: self.radians(degrees: degrees)) //make a 360 rotation
+      })
+   }
+   private func radians(degrees: Double) -> CGFloat {
+      return CGFloat(degrees * .pi / 180)
+   }
    
 //MARK: Status Bar like Time, battery carrier etc.
    override var prefersStatusBarHidden: Bool {
@@ -226,24 +232,28 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate {
    
 //MARK: Helpers
    @objc func captchaTap(_ gesture: UITapGestureRecognizer) {
-      if self.captchaValue == false {
-         self.captchaActivityIndicator.isHidden = false
-         self.captchaActivityIndicator.startAnimating()
+      if !captchaValue { //if imageView has been transformed
+         self.rotateCaptcha(degrees: 180)
+         self.rotateCaptcha(degrees: 360)
+         self.captchaValue = true
          
-         UIView.animate(withDuration: 1.2, animations: { //wait 1 second
-            print("Yo")
-         }) { (success) in
-            if success {
-               self.captchaActivityIndicator.stopAnimating()
-               self.captchaActivityIndicator.isHidden = true
-               self.captchaValue = true
-               self.captchaImageView.image = UIImage(named: "captcha2")
-            }
-         }
-         
-      } else {
+      } else { //if captchaValue = true
+         self.rotateCaptcha(degrees: 180)
+         self.rotateCaptcha(degrees: 360)
          self.captchaValue = false
-         self.captchaImageView.image = UIImage(named: "captcha")
+      }
+      
+      self.view.isUserInteractionEnabled = false //disable everything
+      self.captchaActivityIndicator.startAnimating()
+      self.captchaActivityIndicator.isHidden = false
+      
+      DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.8) {
+         self.view.isUserInteractionEnabled = true
+         self.captchaActivityIndicator.stopAnimating()
+         self.captchaActivityIndicator.isHidden = true
+         print("captchaValue = \(self.captchaValue)")
+         let imageName: String = self.captchaValue ? "captcha2" : "captcha"
+         self.captchaImageView.image = UIImage(named: imageName)
       }
    }
    
@@ -265,41 +275,56 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate {
    
    
 //MARK: IBActions
-   @IBAction func processPaymentButtonTapped(_ sender: Any) {
+   @IBAction func processPaymentButtonTapped(_ sender: UIButton) {
+
+      if !agreeButtonValue { //if theyre false
+         agreeErrorLabel.text = "terms must be accepted"
+         return
+      } else { agreeErrorLabel.text = "" }
+      
+      if !captchaValue {
+         captchaErrorLabel.text = "chapta not confirmed"
+         return
+      } else { captchaErrorLabel.text = "" }
+      
+      
+      
       let alertVC = UIAlertController(title: "Thank you for your purchase", message: "Hope to see you again", preferredStyle: .alert)
       let okAction = UIAlertAction(title: "Ok", style: .default) { (action) in
          alertVC.dismiss(animated: true, completion: nil)
       }
       alertVC.addAction(okAction)
       self.present(alertVC, animated: true, completion: nil)
+      
    }
    
-   @IBAction func cancelButtonTapped(_ sender: Any) {
+   @IBAction func cancelButtonTapped(_ sender: UIButton) {
       let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "homeVC") as! HomeViewController
       present(vc, animated: false, completion: nil)
    }
    
-   @IBAction func agreeButtonTapped(_ sender: Any) {
+   
+   @IBAction func agreeButtonTapped(_ sender: UIButton) {
       if agreeButtonValue == false {
          agreeButtonValue = true
-         agreeButton.setImage(UIImage(named: "blank-check-box"), for: .normal)
+         agreeButton.setImage(UIImage(named: "check-box"), for: .normal)
       } else {
          agreeButtonValue = false
-         agreeButton.setImage(UIImage(named: "check-box"), for: .normal)
+         agreeButton.setImage(UIImage(named: "blank-check-box"), for: .normal)
       }
    }
    
-   @IBAction func rememberAddressButtonTapped(_ sender: Any) {
+   @IBAction func rememberAddressButtonTapped(_ sender: UIButton) {
       if rememberAddressButtonValue == false {
          rememberAddressButtonValue = true
-         rememberAddressButton.setImage(UIImage(named: "blank-check-box"), for: .normal)
+         rememberAddressButton.setImage(UIImage(named: "check-box"), for: .normal)
       } else {
          rememberAddressButtonValue = false
-         rememberAddressButton.setImage(UIImage(named: "check-box"), for: .normal)
+         rememberAddressButton.setImage(UIImage(named: "blank-check-box"), for: .normal)
       }
    }
    
-   @IBAction func editCartButtonTapped(_ sender: Any) {
+   @IBAction func editCartButtonTapped(_ sender: UIButton) {
       let viewController: UIViewController = UIStoryboard(name: "CartSB", bundle: nil).instantiateViewController(withIdentifier: "cartVC")
       self.present(viewController, animated: false, completion: nil)
    }
