@@ -27,6 +27,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
    
    var clothesCategories = [Product]()
    var selectedProduct: Product?
+   var shoppingCart = ShoppingCart.sharedInstance //PB ep76 12mins this guarantee that the shoppingCart property will have the singleton of the ShoppingCart class
+   
    
    override func viewDidLoad() {
       super.viewDidLoad()
@@ -37,6 +39,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
       
       scrollView.delegate = self
       
+   }
+   
+   override func viewWillAppear(_ animated: Bool) {
+      super.viewWillAppear(animated)
+      self.cartButton.setTitle("\(String(describing: self.shoppingCart.totalItem()))", for: .normal)
    }
    
    func scrollViewDidScroll(_ scrollView: UIScrollView) { //disable horizontal scrolling

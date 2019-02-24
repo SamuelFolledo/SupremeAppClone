@@ -153,25 +153,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                }
                product.mainImage = mainImageName //PB ep9 30mins then we store the mainImage only
                
-//Product ColorName
-               let productColors = product.productImages?.mutableCopy() as! NSMutableSet
-               var mainColorName: String?
-               
-               if let colorNames = productData["colors"] {
-                  for colorName in colorNames as! NSArray {
-                     let productImage = ProductImage(context: managedObjectContext)
-                     let currentColorName = colorName as? String
-                     productImage.color = currentColorName
-                     
-                     if mainColorName == nil {
-                        mainColorName = currentColorName
-                     }
-                     productImages.add(productImage)
-                  }
-                  product.productImages = productColors.copy() as? NSSet
-               }
-               product.mainColor = mainColorName
-               
+////Product ColorName
+//               let productColors = product.productImages?.mutableCopy() as! NSMutableSet
+//               var mainColorName: String?
+//               
+//               if let colorNames = productData["colors"] {
+//                  for colorName in colorNames as! NSArray {
+//                     let productImage = ProductImage(context: managedObjectContext)
+//                     let currentColorName = colorName as? String
+//                     productImage.color = currentColorName
+//                     
+//                     if mainColorName == nil {
+//                        mainColorName = currentColorName
+//                     }
+//                     productImages.add(productImage)
+//                  }
+//                  product.productImages = productColors.copy() as? NSSet
+//               }
+//               product.mainColor = mainColorName
+//               
                
                //Product Summary
                if let summary = productData["summary"] { //PB ep9 30mins

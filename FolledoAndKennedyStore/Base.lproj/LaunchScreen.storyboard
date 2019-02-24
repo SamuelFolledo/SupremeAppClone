@@ -1,7 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,7 +17,40 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L03-uj-3bK">
+                                <rect key="frame" x="62.5" y="232.5" width="250" height="222"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="elevatedLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="f02-t2-paj">
+                                        <rect key="frame" x="5" y="0.0" width="240" height="222"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="f02-t2-paj" firstAttribute="centerX" secondItem="L03-uj-3bK" secondAttribute="centerX" id="3SP-CU-KCG"/>
+                                    <constraint firstItem="f02-t2-paj" firstAttribute="height" secondItem="L03-uj-3bK" secondAttribute="height" id="Wf6-Qd-G62"/>
+                                    <constraint firstItem="f02-t2-paj" firstAttribute="centerY" secondItem="L03-uj-3bK" secondAttribute="centerY" id="d5x-f5-txC"/>
+                                    <constraint firstItem="f02-t2-paj" firstAttribute="width" secondItem="L03-uj-3bK" secondAttribute="width" constant="-10" id="n5h-ew-KDU"/>
+                                </constraints>
+                            </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="In1-DA-GS5">
+                                <rect key="frame" x="172.5" y="569" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="In1-DA-GS5" secondAttribute="height" multiplier="1:1" id="eNl-uq-4I9"/>
+                                    <constraint firstAttribute="width" constant="30" id="liJ-0y-xgh"/>
+                                </constraints>
+                                <color key="color" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="L03-uj-3bK" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="1vN-1y-aj8"/>
+                            <constraint firstItem="In1-DA-GS5" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="1.7" id="c1D-Rt-OAo"/>
+                            <constraint firstItem="L03-uj-3bK" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="1:3" id="giR-7F-bm1"/>
+                            <constraint firstItem="L03-uj-3bK" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="jbJ-5o-Mdo"/>
+                            <constraint firstItem="L03-uj-3bK" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="2:3" id="wQE-lU-CUp"/>
+                            <constraint firstItem="In1-DA-GS5" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="xKG-bZ-YYH"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -22,4 +59,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="elevatedLogo.png" width="5296" height="1290"/>
+    </resources>
 </document>

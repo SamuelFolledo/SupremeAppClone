@@ -76,7 +76,7 @@ class ProductDetailsViewController: UIViewController, UITextFieldDelegate {
    override func viewDidLoad() {
       super.viewDidLoad()
       
-      print("THE SELECTED PRODUCT's COLOR IS = \(String(describing: product?.mainColor))")
+//      print("THE SELECTED PRODUCT's COLOR IS = \(String(describing: product?.mainColor))")
       
       setUpViews()
       loadClothesCollection()
@@ -104,6 +104,8 @@ class ProductDetailsViewController: UIViewController, UITextFieldDelegate {
          productsCollectionView.reloadData()
          updateProductDetailView(with: product)
       }
+      self.cartButton.setTitle("\(String(describing: self.shoppingCart.totalItem()))", for: .normal)
+//      self.cartLabel.text = "\(String(describing: self.shoppingCart.totalItem()))"
    }
    
    
