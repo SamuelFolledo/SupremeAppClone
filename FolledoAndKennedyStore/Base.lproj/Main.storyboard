@@ -1050,7 +1050,7 @@
                 <viewControllerPlaceholder storyboardName="CartSB" id="yXg-VW-6CF" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nF0-dz-Jh0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3634" y="-137"/>
+            <point key="canvasLocation" x="3769" y="120"/>
         </scene>
         <!--CheckoutSB-->
         <scene sceneID="3xa-Tf-jWI">
@@ -1058,7 +1058,7 @@
                 <viewControllerPlaceholder storyboardName="CheckoutSB" id="6tk-7F-o4o" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6dg-07-icM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3660" y="-51"/>
+            <point key="canvasLocation" x="3794" y="175"/>
         </scene>
         <!--Extra View Controller-->
         <scene sceneID="AZF-9v-87G">

@@ -10,8 +10,7 @@ import UIKit
 
 class CheckoutViewController: UIViewController, UITextFieldDelegate {
 	
-	
-	//MARK: IBOutlets
+//MARK: IBOutlets
 	@IBOutlet weak var topLogoImageView: UIImageView!
 	@IBOutlet weak var cartButton: UIButton!
 	@IBOutlet weak var editCartButton: UIButton!
@@ -41,6 +40,7 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate {
 	@IBOutlet weak var orderTotalLabel: UILabel!
 	@IBOutlet weak var agreeButton: UIButton!
 	
+	@IBOutlet weak var agreeLabel: UILabel!
 	
 	@IBOutlet weak var captchaImageView: UIImageView!
 	@IBOutlet weak var spinningCaptchaImageView: UIImageView!
@@ -67,10 +67,11 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate {
 	@IBOutlet weak var captchaErrorLabel: UILabel!
 	
 	
-	//MARK: Properties
+//MARK: Properties
 	var timer = Timer()
 	var counter: Int = 0
 	var shoppingCart = ShoppingCart.sharedInstance //PB ep78 9mins get the singleton sharedInstance
+	var customer: Customer?
 	
 	var rememberAddressButtonValue: Bool = false
 	var agreeButtonValue: Bool = false
@@ -83,7 +84,7 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate {
 	var yearArray: [Int] = []
 	
 	
-	//MARK: Life Cycle
+//MARK: Life Cycle
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
@@ -115,8 +116,22 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate {
 		captchaActivityIndicator.stopAnimating()
 	}
 	
+//MARK: Navigations
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		switch segue.identifier {
+		case "confirmOrderSegue":
+			
+			
+			let confirmOrderVC = segue.destination as! ConfirmOrderViewController //PB ep85 31mins once we have the customer, we want to set the destination of the controller
+			confirmOrderVC.customer = self.customer //PB ep85 32mins
+			
+		default:
+			break
+		}
+	}
 	
-	//MARK: Methods
+	
+//MARK: Methods
 	private func updateValuesOfAllViews() {
 		if let rememberAddressValue: Bool = UserDefaults.standard.object(forKey: "rememberCustomerAddress") as? Bool { //retrieving UserDefaults
 			self.rememberAddressButtonValue = rememberAddressValue
@@ -142,7 +157,7 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate {
 		let agreeButtonImage: String = agreeButtonValue ? "check-box" : "blank-check-box"
 		agreeButton.setImage(UIImage(named: agreeButtonImage), for: .normal)
 		
-		let imageName: String = self.captchaValue ? "captcha2" : "captcha"
+		let imageName: String = captchaValue ? "captcha2" : "captcha"
 		self.captchaImageView.image = UIImage(named: imageName)
 		
 		subtotalLabel.text = "\(shoppingCart.totalItemCost().currencyFormatter)"
@@ -150,8 +165,6 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate {
 		orderTotalLabel.text = "\((shoppingCart.totalItemCost() + 10).currencyFormatter)"
 		captchaActivityIndicator.isHidden = true
 	}
-	
-	
 	
 	private func setUpViews() {
 		//      timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(animateTopLogo), userInfo: nil, repeats: true)
@@ -252,7 +265,7 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate {
 		return CGFloat(degrees * .pi / 180)
 	}
 	
-	//MARK: Status Bar like Time, battery carrier etc.
+//MARK: Status Bar like Time, battery carrier etc.
 	override var prefersStatusBarHidden: Bool {
 		return false
 	}
@@ -261,13 +274,13 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate {
 	}
 	
 	
-	//MARK: Helpers
+//MARK: Helpers
 	@objc func captchaTap(_ gesture: UITapGestureRecognizer) {
 		if !captchaValue { //if imageView has been transformed
 			self.rotateCaptcha(degrees: 180)
 			self.rotateCaptcha(degrees: 360)
 			self.captchaValue = true
-			
+			captchaErrorLabel.isHidden = true
 		} else { //if captchaValue = true
 			self.rotateCaptcha(degrees: 180)
 			self.rotateCaptcha(degrees: 360)
@@ -318,8 +331,8 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate {
 		}
 	}
 	
-	private func saveCustomerAddress() {
-		let textFieldValues: [String] = ["\(nameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines))", "\(emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines))", "\(telephoneTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines))", "\(addressTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines))", "\(aptUnitTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines))", "\(zipTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines))", "\(cityTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines))", "\(stateTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines))", "\(countryTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines))"]
+	private func saveCustomerAddress() { //method that will save the user in UserDefaults
+		let textFieldValues: [String] = ["\(nameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines))", "\(emailTextField.text!.trimmedString())", "\(telephoneTextField.text!.trimmedString())", "\(addressTextField.text!.trimmedString())", "\(aptUnitTextField.text!.trimmedString())", "\(zipTextField.text!.trimmedString())", "\(cityTextField.text!.trimmedString())", "\(stateTextField.text!.trimmedString())", "\(countryTextField.text!.trimmedString())"]
 		
 		self.rememberAddressButtonValue = true
 		self.rememberAddressButton.setImage(UIImage(named: "check-box"), for: .normal)
@@ -327,14 +340,12 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate {
 		UserDefaults.standard.set(textFieldValues, forKey: "customerAddress")
 		UserDefaults.standard.set(rememberAddressButtonValue, forKey: "rememberCustomerAddress")
 	}
-	
 	private func deleteCustomerAddress() { //remove our customerAddress and rememberCustomerAddress
 		rememberAddressButtonValue = false
 		rememberAddressButton.setImage(UIImage(named: "blank-check-box"), for: .normal)
 		
 		UserDefaults.standard.removeObject(forKey: "customerAddress")
 		UserDefaults.standard.removeObject(forKey: "rememberCustomerAddress")
-		
 	}
 	
 	@objc func handleEndEditing(_ gesture: UITapGestureRecognizer) {
@@ -352,39 +363,71 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate {
 		self.dismiss(animated: false, completion: nil)
 	}
 	
+	@objc func agreeTapped() {
+		if agreeButtonValue == false {
+			agreeButtonValue = true
+			agreeButton.setImage(UIImage(named: "check-box"), for: .normal)
+		} else {
+			agreeButtonValue = false
+			agreeButton.setImage(UIImage(named: "blank-check-box"), for: .normal)
+		}
+	}
 	
 	
-//MARK: IBActions
-	@IBAction func processPaymentButtonTapped(_ sender: UIButton) {
+	private func processPayment() throws {
 		
 		if !agreeButtonValue { //if theyre false
+			throw CheckoutError.uncheckedAgreeButton
 			agreeErrorLabel.text = "terms must be accepted"
-			return
 		} else { agreeErrorLabel.text = "" }
 		
 		if !captchaValue {
 			captchaErrorLabel.text = "chapta not confirmed"
-			return
 		} else { captchaErrorLabel.text = "" }
 		
-		guard let email = self.emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
 		
-		
-		
-		////
-		let alertVC = UIAlertController(title: "Thank you for your purchase", message: "Login to track package", preferredStyle: .alert)
-		let okAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
-			alertVC.dismiss(animated: true, completion: nil)
+		guard let name = nameTextField.text?.trimmedString(), name.count > 0,
+			let email = emailTextField.text?.trimmedString(), email.count > 0,
+			let phoneNumber = telephoneTextField.text?.trimmedString(), !phoneNumber.isEmpty else {
+				
+				let alert = UIAlertController(title: "Missing information", message: "Please provide all the information for name, email, and password", preferredStyle: .alert) //PB ep85 29mins
+				let okAction = UIAlertAction(title: "OK", style: .default, handler: nil) //PB ep85 30mins
+				alert.addAction(okAction) //PB ep85 30mins
+				present(alert, animated: true, completion: nil)
+				return
 		}
-		let registerAction = UIAlertAction(title: "Login", style: .default) { (action) in
-			let vc = UIStoryboard.init(name: "CheckoutSB", bundle: nil).instantiateViewController(withIdentifier: "loginVC") as! LoginViewController
-			self.present(vc, animated: false, completion: nil)
+		let customer = CustomerService.addCustomer(name: name, email: email, phone: phoneNumber) //addCustomer
+		shoppingCart.assignCart(toCustomer: customer) //assign our cart to our customer
+		
+		var address: Address
+		if !(addressTextField.text?.isEmpty)! && !(cityTextField.text?.isEmpty)! && !(stateTextField.text?.isEmpty)! && !(zipTextField.text?.isEmpty)! { //PB ep90 15mins if not empty... unwrap the textField
+			guard let address1 = addressTextField.text?.trimmedString(), let city = cityTextField.text?.trimmedString(), let state = stateTextField.text?.trimmedString(), let zip = zipTextField.text?.trimmedString() else { return }
+			address = CustomerService.addAddress(forCustomer: customer, address1: address1, city: city, state: state, zip: zip, phone: phoneNumber)
+			
+			shoppingCart.assignShipping(address: address)
 			
 		}
-		alertVC.addAction(okAction)
-		alertVC.addAction(registerAction)
-		self.present(alertVC, animated: true, completion: nil)
 		
+	//Add the Credit Card
+		guard let cardNumber: String = cardNumberTextField.text?.trimmedString(), let expMonth = Int16((cardMonthTextField.text?.trimmedString())!), let expYear = Int16((cardYearTextField.text?.trimmedString())!), let cvv = Int16((cardCvvTextField.text?.trimmedString())!) else { return } //PB ep91 26mins unwrap
+		
+		let creditCard = CustomerService.addCreditCard(forCustomer: customer, nameOnCard: name, cardNumber: cardNumber, expMonth: Int(expMonth), expYear: Int(expYear), cvv: Int(cvv)) //PB ep91 27mins
+		shoppingCart.creditCard = creditCard
+		
+		
+		performSegue(withIdentifier: "confirmOrderSegue", sender: nil)
+		
+	}
+	
+//MARK: IBActions
+	@IBAction func processPaymentButtonTapped(_ sender: UIButton) {
+		do {
+			try processPayment()
+		} catch CheckoutError.incompleteForm {
+			Service.presentAlert(on: self, title: "Incomplete Form", message: "Please fill out all fields")
+		} catch { //default error
+			Service.presentAlert(on: self, title: "Unable To Checkout", message: "There was an error when attempting to processing the payment.\nPlease try again.")
+		}
 	}
 	
 	@IBAction func cancelButtonTapped(_ sender: UIButton) {
@@ -394,13 +437,7 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate {
 	
 	
 	@IBAction func agreeButtonTapped(_ sender: UIButton) {
-		if agreeButtonValue == false {
-			agreeButtonValue = true
-			agreeButton.setImage(UIImage(named: "check-box"), for: .normal)
-		} else {
-			agreeButtonValue = false
-			agreeButton.setImage(UIImage(named: "blank-check-box"), for: .normal)
-		}
+		agreeTapped()
 	}
 	
 	@IBAction func rememberAddressButtonTapped(_ sender: UIButton) {
@@ -482,7 +519,7 @@ extension CheckoutViewController: UIPickerViewDataSource, UIPickerViewDelegate {
 				stateTextField.text = String(stateCandaPickerValues[row].suffix(2))
 			}
 		}
-		if pickerView == monthPicker { cardMonthTextField.text = monthPickerValues[row] }
+		if pickerView == monthPicker { cardMonthTextField.text = String(monthPickerValues[row].suffix(2)) }
 		
 		if pickerView == yearPicker { cardYearTextField.text = "\(yearArray[row])" }
 		
