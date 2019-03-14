@@ -37,7 +37,7 @@ class PaymentInfoTableViewCell: UITableViewCell {
 			
 			cardImageView.image = UIImage(named: "\(cardType)") //PB ep95 10mins
 			cardNumberLabel.text = creditCard.cardNumber?.maskedPlusLast4() //PB ep95 11mins
-			cardNameLabel.text = creditCard.nameOnCard //PB ep95 12mins
+			cardNameLabel.text = "\((creditCard.cardFirstName)!) \((creditCard.cardLastName)!)" //PB ep95 12mins
 			cardExpirationLabel.text = "\(creditCard.expMonth)/\(creditCard.expYear)" //PB ep95 12mins
 		}
 	}

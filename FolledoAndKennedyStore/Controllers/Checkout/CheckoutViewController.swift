@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CheckoutViewController: UIViewController, UITextFieldDelegate {
+class CheckoutViewController: UIViewController {
 	
 //MARK: IBOutlets
 	@IBOutlet weak var topLogoImageView: UIImageView!
@@ -17,7 +17,9 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate {
 	
 	@IBOutlet weak var mainScrollView: UIScrollView!
 	
-	@IBOutlet weak var nameTextField: UITextField!
+	@IBOutlet weak var firstNameTextField: UITextField!
+	@IBOutlet weak var lastNameTextField: UITextField!
+	
 	@IBOutlet weak var emailTextField: UITextField!
 	@IBOutlet weak var telephoneTextField: UITextField!
 	@IBOutlet weak var addressTextField: UITextField!
@@ -50,7 +52,8 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate {
 	@IBOutlet weak var processPaymentButton: UIButton!
 	
 	//error labels
-	@IBOutlet weak var nameErrorLabel: UILabel!
+	@IBOutlet weak var firstNameErrorLabel: UILabel!
+	@IBOutlet weak var lastNameErrorLabel: UILabel!
 	@IBOutlet weak var emailErrorLabel: UILabel!
 	@IBOutlet weak var telephoneErrorLabel: UILabel!
 	@IBOutlet weak var addressErrorLabel: UILabel!
@@ -82,7 +85,8 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate {
 	var monthPicker = UIPickerView()
 	var yearPicker = UIPickerView()
 	var yearArray: [Int] = []
-	
+	var addressTextFieldsArray: [UITextField] = []
+	var cardTextFieldsArray: [UITextField] = []
 	
 //MARK: Life Cycle
 	override func viewDidLoad() {
@@ -120,8 +124,6 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate {
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		switch segue.identifier {
 		case "confirmOrderSegue":
-			
-			
 			let confirmOrderVC = segue.destination as! ConfirmOrderViewController //PB ep85 31mins once we have the customer, we want to set the destination of the controller
 			confirmOrderVC.customer = self.customer //PB ep85 32mins
 			
@@ -143,9 +145,9 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate {
 					print("customerAddress has no value")
 					return
 				} else { //put the value to the textfield
-					let textFieldsArray: [UITextField] = [nameTextField, emailTextField, telephoneTextField, addressTextField, aptUnitTextField, zipTextField, cityTextField, stateTextField, countryTextField]
+					
 					for value in 0 ..< customerAddressValues.count { //loop through
-						textFieldsArray[value].text = customerAddressValues[value]
+						addressTextFieldsArray[value].text = customerAddressValues[value] //put the customerAddress saved from UserDefaults
 					}
 				}
 			}
@@ -153,9 +155,13 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate {
 		
 		let addressButtonImage: String = rememberAddressButtonValue ? "check-box" : "blank-check-box"
 		rememberAddressButton.setImage(UIImage(named: addressButtonImage), for: .normal)
+//		rememberAddressButton.setBackgroundImage(UIImage(named: addressButtonImage), for: .normal)
+		rememberAddressButton.tintColor = .black
 		
 		let agreeButtonImage: String = agreeButtonValue ? "check-box" : "blank-check-box"
 		agreeButton.setImage(UIImage(named: agreeButtonImage), for: .normal)
+//		agreeButton.setBackgroundImage(UIImage(named: agreeButtonImage), for: .normal)
+		agreeButton.tintColor = .black
 		
 		let imageName: String = captchaValue ? "captcha2" : "captcha"
 		self.captchaImageView.image = UIImage(named: imageName)
@@ -172,9 +178,14 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate {
 		self.topLogoImageView.isUserInteractionEnabled = true
 		self.topLogoImageView.addGestureRecognizer(tapImage)
 		
-		let tapLabel = UITapGestureRecognizer(target: self, action: #selector(CheckoutViewController.rememberAddressTapped))
+		let tapRememberAddress = UITapGestureRecognizer(target: self, action: #selector(CheckoutViewController.rememberAddressTapped))
 		self.rememberAddressLabel.isUserInteractionEnabled = true
-		self.rememberAddressLabel.addGestureRecognizer(tapLabel)
+		self.rememberAddressLabel.addGestureRecognizer(tapRememberAddress)
+		
+		let tapAgreeTerms = UITapGestureRecognizer(target: self, action: #selector(CheckoutViewController.agreeTermsTapped))
+		self.agreeLabel.isUserInteractionEnabled = true
+		self.agreeLabel.addGestureRecognizer(tapAgreeTerms)
+		
 		
 		cartButton.backgroundColor = .clear
 		cartButton.layer.cornerRadius = 5
@@ -189,7 +200,7 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate {
 		cancelButton.layer.cornerRadius = 5
 		processPaymentButton.layer.cornerRadius = 5
 		
-		updateValuesOfAllViews()
+		
 		
 		let scrollViewTap = UITapGestureRecognizer(target: self, action: #selector(handleEndEditing(_:)))
 		self.mainScrollView.addGestureRecognizer(scrollViewTap)
@@ -200,6 +211,42 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate {
 		
 		setupTextFields()
 		setupPickers()
+		updateValuesOfAllViews()
+		resetErrorLabels()
+	}
+	
+	private func resetErrorLabels() {
+		firstNameErrorLabel.isHidden = true
+		firstNameTextField.layer.borderColor = CLEARLAYERCOLOR
+		lastNameErrorLabel.isHidden = true
+		lastNameTextField.layer.borderColor = CLEARLAYERCOLOR
+		
+		emailErrorLabel.isHidden = true
+		emailTextField.layer.borderColor = CLEARLAYERCOLOR
+		telephoneErrorLabel.isHidden = true
+		telephoneTextField.layer.borderColor = CLEARLAYERCOLOR
+		addressErrorLabel.isHidden = true
+		addressTextField.layer.borderColor = CLEARLAYERCOLOR
+		aptUnitErrorLabel.isHidden = true
+		aptUnitTextField.layer.borderColor = CLEARLAYERCOLOR
+		zipErrorLabel.isHidden = true
+		zipTextField.layer.borderColor = CLEARLAYERCOLOR
+		cityErrorLabel.isHidden = true
+		cityTextField.layer.borderColor = CLEARLAYERCOLOR
+		stateErrorLabel.isHidden = true
+		stateTextField.layer.borderColor = CLEARLAYERCOLOR
+		countryErrorLabel.isHidden = true
+		countryTextField.layer.borderColor = CLEARLAYERCOLOR
+		cardNumberErrorLabel.isHidden = true
+		cardNumberTextField.layer.borderColor = CLEARLAYERCOLOR
+		cardMonthErrorLabel.isHidden = true
+		cardMonthTextField.layer.borderColor = CLEARLAYERCOLOR
+		cardYearErrorLabel.isHidden = true
+		cardYearTextField.layer.borderColor = CLEARLAYERCOLOR
+		cardCvvErrorLabel.isHidden = true
+		cardCvvTextField.layer.borderColor = CLEARLAYERCOLOR
+		agreeErrorLabel.textColor = .clear
+		captchaErrorLabel.isHidden = true
 		
 	}
 	
@@ -211,49 +258,108 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate {
 		
 		setupYearArray()
 		
-		let toolBar = UIToolbar() //RE ep.57 2mins Tool bar on top of the picker where we'll put our Done button
-		toolBar.sizeToFit() //RE ep. //RE ep.57 2mins
+		let nextToolBar = UIToolbar() //RE ep.57 2mins Tool bar on top of the picker where we'll put our Done button
+		nextToolBar.sizeToFit() //RE ep. //RE ep.57 2mins
 		let flexibleBar = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil) //RE ep.57 2mins this will push the Done Button all the way to the right
-		let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.handleEndEditing(_:))) //RE ep.57 3mins
-		toolBar.setItems([flexibleBar, doneButton], animated: true) //RE ep.57 4mins add the two bar buttons to our toolBar
+		let nextButton = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(self.handleNextEditing(_:)))
+		nextToolBar.setItems([flexibleBar, nextButton], animated: true) //RE ep.57 4mins add the two bar buttons to our toolBar
 		
-		stateTextField.inputAccessoryView = toolBar
+		let doneToolBar = UIToolbar()
+		let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.handleEndEditing(_:))) //RE ep.57 3mins
+		doneToolBar.setItems([flexibleBar, doneButton], animated: true)
+		
+		telephoneTextField.inputAccessoryView = nextToolBar
+		zipTextField.inputAccessoryView = nextToolBar
+		cardNumberTextField.inputAccessoryView = nextToolBar
+		cardCvvTextField.inputAccessoryView = doneToolBar //will contain doneToolBar
+		
+		
+		stateTextField.inputAccessoryView = nextToolBar
 		stateTextField.inputView = statePicker
 		
-		countryTextField.inputAccessoryView = toolBar
+		countryTextField.inputAccessoryView = nextToolBar
 		countryTextField.inputView = countryPicker
 		
-		cardMonthTextField.inputAccessoryView = toolBar
+		cardMonthTextField.inputAccessoryView = nextToolBar
 		cardMonthTextField.inputView = monthPicker
 		
-		cardYearTextField.inputAccessoryView = toolBar
+		cardYearTextField.inputAccessoryView = nextToolBar
 		cardYearTextField.inputView = yearPicker
 		
 	}
 	
 	private func setupTextFields() {
-		nameTextField.delegate = self
-		emailTextField.delegate = self
-		telephoneTextField.delegate = self
-		addressTextField.delegate = self
-		aptUnitTextField.delegate = self
-		zipTextField.delegate = self
-		cityTextField.delegate = self
-		stateTextField.delegate = self
-		countryTextField.delegate = self
+//		firstNameTextField.delegate = self
+//		lastNameTextField.delegate = self
+//		emailTextField.delegate = self
+//		telephoneTextField.delegate = self
+//		addressTextField.delegate = self
+//		aptUnitTextField.delegate = self
+//		zipTextField.delegate = self
+//		cityTextField.delegate = self
+//		stateTextField.delegate = self
+//		countryTextField.delegate = self
+//
+//		cardNumberTextField.delegate = self
+//		cardMonthTextField.delegate = self
+//		cardYearTextField.delegate = self
+//		cardCvvTextField.delegate = self
 		
-		cardNumberTextField.delegate = self
-		cardMonthTextField.delegate = self
-		cardYearTextField.delegate = self
-		cardCvvTextField.delegate = self
+		self.addressTextFieldsArray = [firstNameTextField, lastNameTextField, emailTextField, telephoneTextField, addressTextField, aptUnitTextField, zipTextField, cityTextField, stateTextField, countryTextField]
+		self.cardTextFieldsArray = [cardNumberTextField, cardMonthTextField, cardYearTextField, cardCvvTextField]
 		
+		//borderWidth
+//		firstNameTextField.layer.borderWidth = 1
+//		lastNameTextField.layer.borderWidth = 1
+//		emailTextField.layer.borderWidth = 1
+//		telephoneTextField.layer.borderWidth = 1
+//		addressTextField.layer.borderWidth = 1
+//		aptUnitTextField.layer.borderWidth = 1
+//		zipTextField.layer.borderWidth = 1
+//		cityTextField.layer.borderWidth = 1
+//		stateTextField.layer.borderWidth = 1
+//		countryTextField.layer.borderWidth = 1
+//
+//		cardNumberTextField.layer.borderWidth = 1
+//		cardMonthTextField.layer.borderWidth = 1
+//		cardYearTextField.layer.borderWidth = 1
+//		cardCvvTextField.layer.borderWidth = 1
+		
+		//border Color
+		for textField in addressTextFieldsArray + cardTextFieldsArray {
+			textField.delegate = self
+			textField.layer.borderWidth = 1
+			textField.layer.borderColor = CLEARLAYERCOLOR
+		}
+//		firstNameTextField.layer.borderColor = CLEARLAYERCOLOR
+//		lastNameTextField.layer.borderColor = CLEARLAYERCOLOR
+//		emailTextField.layer.borderColor = CLEARLAYERCOLOR
+//		telephoneTextField.layer.borderColor = CLEARLAYERCOLOR
+//		addressTextField.layer.borderColor = CLEARLAYERCOLOR
+//		aptUnitTextField.layer.borderColor = CLEARLAYERCOLOR
+//		zipTextField.layer.borderColor = CLEARLAYERCOLOR
+//		cityTextField.layer.borderColor = CLEARLAYERCOLOR
+//		stateTextField.layer.borderColor = CLEARLAYERCOLOR
+//		countryTextField.layer.borderColor = CLEARLAYERCOLOR
+//
+//		cardNumberTextField.layer.borderColor = CLEARLAYERCOLOR
+//		cardMonthTextField.layer.borderColor = CLEARLAYERCOLOR
+//		cardYearTextField.layer.borderColor = CLEARLAYERCOLOR
+//		cardCvvTextField.layer.borderColor = CLEARLAYERCOLOR
 	}
 	
 	func setupYearArray() { //RE ep.59 3mins
-		for i in 2019...2050 { //RE ep.59 3mins
-			yearArray.append(i) //RE ep.59 4mins add 1800 to 2030
+		let now = Date()
+		let dateFormatter = DateFormatter()
+		dateFormatter.dateFormat = "yyyy"
+		
+		let currentYear: Int = Int(dateFormatter.string(from: now))!
+		let maxYearInt: Int = currentYear + 12
+		
+		for i in currentYear...maxYearInt {
+			yearArray.append(i)
 		}
-		//      yearArray.reverse() //RE ep.59 5mins start from 2030 and not in 1800
+//      yearArray.reverse() //RE ep.59 5mins start from 2030 and not in 1800
 	}
 	
 	private func rotateCaptcha(degrees: Double) {
@@ -301,7 +407,6 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate {
 		}
 	}
 	
-	
 	@objc func rememberAddressTapped() {
 		
 		if rememberAddressButtonValue == false {
@@ -312,7 +417,8 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate {
 			
 			let alert = UIAlertController(title: "Removing Saved Address", message: "Are you sure you want to remove remembered address?", preferredStyle: .alert)
 			let yesAction = UIAlertAction(title: "Yes", style: .default) { (action) in
-				self.nameTextField.text = ""
+				self.firstNameTextField.text = ""
+				self.lastNameTextField.text = ""
 				self.emailTextField.text = ""
 				self.telephoneTextField.text = ""
 				self.addressTextField.text = ""
@@ -330,9 +436,8 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate {
 			present(alert, animated: true, completion: nil)
 		}
 	}
-	
 	private func saveCustomerAddress() { //method that will save the user in UserDefaults
-		let textFieldValues: [String] = ["\(nameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines))", "\(emailTextField.text!.trimmedString())", "\(telephoneTextField.text!.trimmedString())", "\(addressTextField.text!.trimmedString())", "\(aptUnitTextField.text!.trimmedString())", "\(zipTextField.text!.trimmedString())", "\(cityTextField.text!.trimmedString())", "\(stateTextField.text!.trimmedString())", "\(countryTextField.text!.trimmedString())"]
+		let textFieldValues: [String] = ["\(firstNameTextField.text!.trimmedString())", "\(lastNameTextField.text!.trimmedString())", "\(emailTextField.text!.trimmedString())", "\(telephoneTextField.text!.trimmedString())", "\(addressTextField.text!.trimmedString())", "\(aptUnitTextField.text!.trimmedString())", "\(zipTextField.text!.trimmedString())", "\(cityTextField.text!.trimmedString())", "\(stateTextField.text!.trimmedString())", "\(countryTextField.text!.trimmedString())"]
 		
 		self.rememberAddressButtonValue = true
 		self.rememberAddressButton.setImage(UIImage(named: "check-box"), for: .normal)
@@ -348,10 +453,31 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate {
 		UserDefaults.standard.removeObject(forKey: "rememberCustomerAddress")
 	}
 	
+	@objc func handleNextEditing(_ gesture: UITapGestureRecognizer) {
+		
+		if telephoneTextField.isFirstResponder {
+			addressTextField.becomeFirstResponder()
+		} else if zipTextField.isFirstResponder {
+				cityTextField.becomeFirstResponder()
+		} else if stateTextField.isFirstResponder {
+			countryTextField.becomeFirstResponder()
+		} else if countryTextField.isFirstResponder {
+			cardNumberTextField.becomeFirstResponder()
+		} else if cardNumberTextField.isFirstResponder {
+			cardMonthTextField.becomeFirstResponder()
+		} else if cardMonthTextField.isFirstResponder {
+			cardYearTextField.becomeFirstResponder()
+		} else if cardYearTextField.isFirstResponder {
+			cardCvvTextField.becomeFirstResponder()
+		} else {
+			resignFirstResponder()
+		}
+		
+		
+	}
 	@objc func handleEndEditing(_ gesture: UITapGestureRecognizer) {
 		self.view.endEditing(true)
 	}
-	
 	@objc func animateTopLogo() {
 		topLogoImageView.image = UIImage(named: "supremeLogo\(counter)")
 		counter += 1
@@ -362,13 +488,14 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate {
 	@objc func handleLogoDismiss(_ gesture: UITapGestureRecognizer) {
 		self.dismiss(animated: false, completion: nil)
 	}
-	
-	@objc func agreeTapped() {
+	@objc func agreeTermsTapped() {
 		if agreeButtonValue == false {
 			agreeButtonValue = true
+			agreeButton.setBackgroundImage(UIImage(named: "check-box"), for: .normal)
 			agreeButton.setImage(UIImage(named: "check-box"), for: .normal)
 		} else {
 			agreeButtonValue = false
+			agreeButton.setBackgroundImage(UIImage(named: "blank-check-box"), for: .normal)
 			agreeButton.setImage(UIImage(named: "blank-check-box"), for: .normal)
 		}
 	}
@@ -378,53 +505,210 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate {
 		
 		if !agreeButtonValue { //if theyre false
 			throw CheckoutError.uncheckedAgreeButton
-			agreeErrorLabel.text = "terms must be accepted"
-		} else { agreeErrorLabel.text = "" }
+		} else { agreeErrorLabel.textColor = .clear }
 		
 		if !captchaValue {
-			captchaErrorLabel.text = "chapta not confirmed"
-		} else { captchaErrorLabel.text = "" }
+			throw CheckoutError.uncheckedCaptcha
+		} else { captchaErrorLabel.isHidden = true }
 		
-		
-		guard let name = nameTextField.text?.trimmedString(), name.count > 0,
-			let email = emailTextField.text?.trimmedString(), email.count > 0,
-			let phoneNumber = telephoneTextField.text?.trimmedString(), !phoneNumber.isEmpty else {
+//check customer's textField
+		for tf in addressTextFieldsArray {
+			switch tf {
+			case firstNameTextField:
+				if checkIfTextFieldIsEmpty(textField: firstNameTextField) {
+					throw CheckoutError.incompleteForm }
 				
-				let alert = UIAlertController(title: "Missing information", message: "Please provide all the information for name, email, and password", preferredStyle: .alert) //PB ep85 29mins
-				let okAction = UIAlertAction(title: "OK", style: .default, handler: nil) //PB ep85 30mins
-				alert.addAction(okAction) //PB ep85 30mins
-				present(alert, animated: true, completion: nil)
-				return
+				validateTextField(textField: firstNameTextField, withType: "name")
+				if firstNameTextField.layer.borderColor == REDLAYERCOLOR {
+					print("Invalid first name, throwing error")
+					throw CheckoutError.invalidName
+				}
+				
+			case lastNameTextField:
+				if checkIfTextFieldIsEmpty(textField: lastNameTextField) {
+					throw CheckoutError.incompleteForm }
+				
+				validateTextField(textField: lastNameTextField, withType: "name")
+				if lastNameTextField.layer.borderColor == REDLAYERCOLOR {
+					print("Invalid last name, throwing error")
+					throw CheckoutError.invalidName
+				}
+				
+			case emailTextField:
+				if checkIfTextFieldIsEmpty(textField: emailTextField) {
+					throw CheckoutError.incompleteForm }
+				
+				validateTextField(textField: emailTextField, withType: "email")
+				
+				
+			case telephoneTextField:
+				if checkIfTextFieldIsEmpty(textField: telephoneTextField) {
+					throw CheckoutError.incompleteForm }
+				
+				validateTextField(textField: telephoneTextField, withType: "phone")
+				
+			case addressTextField:
+				if checkIfTextFieldIsEmpty(textField: addressTextField) {
+					throw CheckoutError.incompleteForm }
+				
+				validateTextField(textField: addressTextField, withType: "address")
+				
+			case cityTextField:
+				if checkIfTextFieldIsEmpty(textField: cityTextField) {
+					throw CheckoutError.incompleteForm }
+				
+				validateTextField(textField: cityTextField, withType: "address")
+				
+			case stateTextField:
+				if checkIfTextFieldIsEmpty(textField: stateTextField) {
+					throw CheckoutError.incompleteForm }
+				
+				validateTextField(textField: stateTextField, withType: "state")
+				
+			case zipTextField:
+				if checkIfTextFieldIsEmpty(textField: zipTextField) {
+					throw CheckoutError.incompleteForm }
+				
+				validateTextField(textField: zipTextField, withType: "zipNumber")
+				
+			default:
+				break
+			}
 		}
-		let customer = CustomerService.addCustomer(name: name, email: email, phone: phoneNumber) //addCustomer
-		shoppingCart.assignCart(toCustomer: customer) //assign our cart to our customer
 		
-		var address: Address
-		if !(addressTextField.text?.isEmpty)! && !(cityTextField.text?.isEmpty)! && !(stateTextField.text?.isEmpty)! && !(zipTextField.text?.isEmpty)! { //PB ep90 15mins if not empty... unwrap the textField
-			guard let address1 = addressTextField.text?.trimmedString(), let city = cityTextField.text?.trimmedString(), let state = stateTextField.text?.trimmedString(), let zip = zipTextField.text?.trimmedString() else { return }
-			address = CustomerService.addAddress(forCustomer: customer, address1: address1, city: city, state: state, zip: zip, phone: phoneNumber)
-			
-			shoppingCart.assignShipping(address: address)
-			
+//Credit Card TextFields
+		for tf in cardTextFieldsArray {
+			switch tf {
+			case cardNumberTextField:
+				if checkIfTextFieldIsEmpty(textField: cardNumberTextField) {
+					throw CheckoutError.incompleteForm }
+				
+				validateTextField(textField: cardNumberTextField, withType: "cardNumber")
+				
+			case cardMonthTextField:
+				if checkIfTextFieldIsEmpty(textField: cardMonthTextField) {
+					throw CheckoutError.incompleteForm }
+				
+				validateTextField(textField: cardMonthTextField, withType: "cardMonth")
+				
+			case cardYearTextField:
+				if checkIfTextFieldIsEmpty(textField: cardYearTextField) {
+					throw CheckoutError.incompleteForm }
+				
+				validateTextField(textField: cardYearTextField, withType: "cardYear")
+				
+			case cardCvvTextField:
+				if checkIfTextFieldIsEmpty(textField: cardCvvTextField) {
+					throw CheckoutError.incompleteForm }
+				
+				validateTextField(textField: cardCvvTextField, withType: "cardCvv")
+				
+			default:
+				break
+			}
 		}
 		
-	//Add the Credit Card
-		guard let cardNumber: String = cardNumberTextField.text?.trimmedString(), let expMonth = Int16((cardMonthTextField.text?.trimmedString())!), let expYear = Int16((cardYearTextField.text?.trimmedString())!), let cvv = Int16((cardCvvTextField.text?.trimmedString())!) else { return } //PB ep91 26mins unwrap
+	//evaluate all textFields
+		let allTextFields: [UITextField] = addressTextFieldsArray + cardTextFieldsArray
+		var hasError = false
 		
-		let creditCard = CustomerService.addCreditCard(forCustomer: customer, nameOnCard: name, cardNumber: cardNumber, expMonth: Int(expMonth), expYear: Int(expYear), cvv: Int(cvv)) //PB ep91 27mins
-		shoppingCart.creditCard = creditCard
+		for tf in allTextFields {
+			if tf.layer.borderColor == REDLAYERCOLOR {
+				hasError = true
+			}
+		}
+		
+	//check for errors
+		if !hasError {
+			guard let firstName = firstNameTextField.text?.trimmedString(),
+				let lastName = lastNameTextField.text?.trimmedString(),
+				let email = emailTextField.text?.trimmedString(),
+				let phoneNumber = telephoneTextField.text?.trimmedString(),
+				let address1 = addressTextField.text?.trimmedString(),
+				let city = cityTextField.text?.trimmedString(),
+				let state = stateTextField.text?.trimmedString(),
+				let zip = zipTextField.text?.trimmedString(),
+				let cardNumber: String = cardNumberTextField.text?.trimmedString(),
+				let expMonth = Int16((cardMonthTextField.text?.trimmedString())!),
+				let expYear = Int16((cardYearTextField.text?.trimmedString())!),
+				let cvv = Int16((cardCvvTextField.text?.trimmedString())!) else { print("hasError check has missing textFields"); return }
+		//addCustomer
+			let customer = CustomerService.addCustomer(firstName: firstName, lastName: lastName, email: email, phone: phoneNumber) //addCustomer
+			shoppingCart.assignCart(toCustomer: customer) //assign our cart to our customer
+			
+			var address: Address
+			if !(addressTextField.text?.isEmpty)! && !(cityTextField.text?.isEmpty)! && !(stateTextField.text?.isEmpty)! && !(zipTextField.text?.isEmpty)! {
+				address = CustomerService.addAddress(forCustomer: customer, address1: address1, city: city, state: state, zip: zip, phone: phoneNumber)
+				
+				shoppingCart.assignShipping(address: address)
+			}
+			
+		//Add the Credit Card
+			let creditCard = CustomerService.addCreditCard(forCustomer: customer, firstName: firstName, lastName: lastName, cardNumber: cardNumber, expMonth: Int(expMonth), expYear: Int(expYear), cvv: Int(cvv)) //PB ep91 27mins
+			shoppingCart.creditCard = creditCard
+			
+			performSegue(withIdentifier: "confirmOrderSegue", sender: nil)
+		}
 		
 		
-		performSegue(withIdentifier: "confirmOrderSegue", sender: nil)
+	}
+	
+	private func checkIfTextFieldIsEmpty(textField: UITextField) -> Bool { //true if no text
+		if textField.text!.isEmpty || textField.text == "" || textField.text == " " {
+			textField.layer.borderColor = REDLAYERCOLOR
+			return true //if there is no text then return true
+		} else {
+			textField.layer.borderColor = CLEARLAYERCOLOR
+			return false
+		}
+	}
+	
+	private func validateTextField(textField: UITextField, withType type: String) {
 		
+		switch type {
+		case "name":
+			guard let name = textField.text else { return }
+			if !Service.isValidName(name: name) {
+				textField.layer.borderColor = REDLAYERCOLOR
+			} else {
+				textField.layer.borderColor = CLEARLAYERCOLOR
+			}
+		case "email":
+			guard let email = textField.text else { return }
+			if !Service.isValidEmail(email: email) { //if not valid
+				textField.layer.borderColor = REDLAYERCOLOR
+			} else { textField.layer.borderColor = CLEARLAYERCOLOR }
+		case "phone":
+			print("Name")
+		case "address":
+			print("Name")
+		case "cardNumber":
+			print("Name")
+		case "cardExp":
+			print("Name")
+		default:
+			break
+		}
 	}
 	
 //MARK: IBActions
 	@IBAction func processPaymentButtonTapped(_ sender: UIButton) {
 		do {
+//			resetErrorLabels()
 			try processPayment()
-		} catch CheckoutError.incompleteForm {
+			
+		} catch CheckoutError.uncheckedAgreeButton {
+			agreeErrorLabel.textColor = .red
+			agreeErrorLabel.text = "terms must be accepted"
+			agreeButton.tintColor = .red
+		} catch CheckoutError.uncheckedCaptcha {
+			captchaErrorLabel.isHidden = false
+			captchaErrorLabel.text = "captcha error"
+			
+		} catch CheckoutError.invalidFormat {
 			Service.presentAlert(on: self, title: "Incomplete Form", message: "Please fill out all fields")
+		} catch CheckoutError.incompleteForm {
+			Service.presentAlert(on: self, title: "Incomplete Forms", message: "Some fields are missing")
 		} catch { //default error
 			Service.presentAlert(on: self, title: "Unable To Checkout", message: "There was an error when attempting to processing the payment.\nPlease try again.")
 		}
@@ -435,9 +719,17 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate {
 		present(vc, animated: false, completion: nil)
 	}
 	
-	
 	@IBAction func agreeButtonTapped(_ sender: UIButton) {
-		agreeTapped()
+		agreeTermsTapped()
+//		guard let customFont = UIFont(name: "CustomFont-Light", size: UIFont.labelFontSize) else {
+//			fatalError("""
+//        Failed to load the "CustomFont-Light" font.
+//        Make sure the font file is included in the project and the font name is spelled correctly.
+//        """
+//			)
+//		}
+//		label.font = UIFontMetrics.default.scaledFont(for: customFont)
+//		label.adjustsFontForContentSizeCategory = true
 	}
 	
 	@IBAction func rememberAddressButtonTapped(_ sender: UIButton) {
@@ -527,3 +819,44 @@ extension CheckoutViewController: UIPickerViewDataSource, UIPickerViewDelegate {
 	
 }
 
+extension CheckoutViewController: UITextFieldDelegate {
+	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+		switch textField {
+		case firstNameTextField:
+			lastNameTextField.becomeFirstResponder()
+		case lastNameTextField:
+			emailTextField.becomeFirstResponder()
+		case emailTextField:
+			telephoneTextField.becomeFirstResponder()
+			
+		case telephoneTextField:
+			addressTextField.becomeFirstResponder()
+		case addressTextField:
+			aptUnitTextField.becomeFirstResponder()
+		case aptUnitTextField:
+			zipTextField.becomeFirstResponder()
+			
+		case zipTextField:
+			cityTextField.becomeFirstResponder()
+		case cityTextField:
+			stateTextField.becomeFirstResponder()
+		case stateTextField:
+			countryTextField.becomeFirstResponder()
+			
+		case countryTextField:
+			cardNumberTextField.becomeFirstResponder()
+		case cardNumberTextField:
+			cardMonthTextField.becomeFirstResponder()
+		case cardMonthTextField:
+			cardYearTextField.becomeFirstResponder()
+		case cardYearTextField:
+			cardCvvTextField.becomeFirstResponder()
+		case cardCvvTextField:
+			textField.resignFirstResponder()
+		default:
+			textField.resignFirstResponder()
+		}
+		
+		return true
+	}
+}

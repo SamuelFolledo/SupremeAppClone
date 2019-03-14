@@ -41,9 +41,10 @@ struct CustomerService { //PB ep84 1mins
 	}
 	
 	
-	static internal func addCustomer(name: String, email: String, phone: String) -> Customer { //PB ep85 24mins register method
+	static internal func addCustomer(firstName: String, lastName: String, email: String, phone: String) -> Customer { //PB ep85 24mins register method
 		let customer = Customer(context: managedObjectContext) //PB ep85 25mins instantiate the Customer entity and call managedObectContext
-		customer.name = name //PB ep85 25mins
+		customer.firstName = firstName //PB ep85 25mins
+		customer.lastName = lastName
 		customer.email = email //PB ep85 26mins
 		customer.phone = phone
 //		customer.password = password //PB ep85 26mins
@@ -93,10 +94,12 @@ struct CustomerService { //PB ep84 1mins
 	}
 	
 	
-	static func addCreditCard(forCustomer customer: Customer, nameOnCard: String, cardNumber: String, expMonth: Int, expYear: Int, cvv: Int) -> CreditCard { //PB ep91 16mins method to add CreditCard
+	static func addCreditCard(forCustomer customer: Customer, firstName: String, lastName: String, cardNumber: String, expMonth: Int, expYear: Int, cvv: Int) -> CreditCard { //PB ep91 16mins method to add CreditCard
 		let creditCard = CreditCard(context: managedObjectContext) //PB ep91 17mins credit card reference to the entity
 		
-		creditCard.nameOnCard = nameOnCard //PB ep91 17mins
+		
+		creditCard.cardFirstName = firstName //PB ep91 17mins
+		creditCard.cardLastName = lastName
 		creditCard.cardNumber = cardNumber //PB ep91 17mins
 		creditCard.expMonth = Int16(expMonth) //PB ep91 18mins make sure it is at Int16
 		creditCard.expYear = Int16(expYear) //PB ep91 18mins

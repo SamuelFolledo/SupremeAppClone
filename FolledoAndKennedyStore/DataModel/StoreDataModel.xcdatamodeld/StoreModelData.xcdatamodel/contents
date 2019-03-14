@@ -10,11 +10,12 @@
         <relationship name="customer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Customer" inverseName="address" inverseEntity="Customer" syncable="YES"/>
     </entity>
     <entity name="CreditCard" representedClassName="CreditCard" syncable="YES" codeGenerationType="class">
+        <attribute name="cardFirstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cardLastName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="cardNumber" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="cvv" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="expMonth" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="expYear" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="nameOnCard" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="address" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Address" inverseName="creditCard" inverseEntity="Address" syncable="YES"/>
         <relationship name="customer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Customer" inverseName="creditCard" inverseEntity="Customer" syncable="YES"/>
@@ -22,7 +23,8 @@
     </entity>
     <entity name="Customer" representedClassName="Customer" syncable="YES" codeGenerationType="class">
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="address" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Address" inverseName="customer" inverseEntity="Address" syncable="YES"/>
@@ -67,13 +69,13 @@
         <relationship name="product" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Product" inverseName="productInfo" inverseEntity="Product" syncable="YES"/>
     </entity>
     <elements>
+        <element name="Address" positionX="-104.796875" positionY="480.078125" width="128" height="150"/>
+        <element name="CreditCard" positionX="-503.59375" positionY="310.15234375" width="128" height="195"/>
+        <element name="Customer" positionX="125.66796875" positionY="269.21484375" width="128" height="165"/>
         <element name="Manufacturer" positionX="-97.51953125" positionY="40.51953125" width="128" height="88"/>
+        <element name="OrderHistory" positionX="-292.625" positionY="365.73828125" width="128" height="105"/>
         <element name="Product" positionX="-277.28515625" positionY="-157.15234375" width="128" height="238"/>
         <element name="ProductImage" positionX="-487.0625" positionY="37.84375" width="128" height="88"/>
         <element name="ProductInfo" positionX="-278.953125" positionY="135.046875" width="128" height="105"/>
-        <element name="Customer" positionX="125.66796875" positionY="269.21484375" width="128" height="148"/>
-        <element name="Address" positionX="-104.796875" positionY="480.078125" width="128" height="150"/>
-        <element name="CreditCard" positionX="-503.59375" positionY="310.15234375" width="128" height="180"/>
-        <element name="OrderHistory" positionX="-292.625" positionY="365.73828125" width="128" height="105"/>
     </elements>
 </model>

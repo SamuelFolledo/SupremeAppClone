@@ -11,6 +11,8 @@ enum CheckoutError: Error {
 	case uncheckedAgreeButton
 	case uncheckedCaptcha
 	case incompleteForm
+	case invalidName
 	case invalidEmail
+	case invalidFormat(textField: String)
 	case incorrectPasswordLenght
 }

@@ -15,8 +15,12 @@
 		7E4DF74A21D9DDD0006747D5 /* CheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4DF74921D9DDD0006747D5 /* CheckoutViewController.swift */; };
 		7E4DF74C21D9E602006747D5 /* ExtraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4DF74B21D9E601006747D5 /* ExtraViewController.swift */; };
 		7E5748F722234D1B00DF79B3 /* ConfirmOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5748F622234D1B00DF79B3 /* ConfirmOrderViewController.swift */; };
+		7EBB74842228A6410009520E /* JockeyOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7EBB74822228A6410009520E /* JockeyOne-Regular.ttf */; };
+		7EBB74852228A6410009520E /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7EBB74832228A6410009520E /* OFL.txt */; };
+		7ED0F5312228D07000252668 /* OrderCompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED0F5302228D07000252668 /* OrderCompletedViewController.swift */; };
 		7EE3B63821F4025700D4D8DB /* elevatedLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EE3B63721F4025700D4D8DB /* elevatedLogo.png */; };
 		7EE6303B21DC512B00BE05B5 /* ItemInCartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EE6303921DC512B00BE05B5 /* ItemInCartTableViewCell.xib */; };
+		7EE68679222A760D0053288B /* UITextField+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE68678222A760D0053288B /* UITextField+extension.swift */; };
 		7EE6F3F92226718500F3D61F /* ShippingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE6F3F82226718500F3D61F /* ShippingTableViewCell.swift */; };
 		7EE6F3FB2226719F00F3D61F /* PaymentInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE6F3FA2226719F00F3D61F /* PaymentInfoTableViewCell.swift */; };
 		7EE6F3FD22267FDC00F3D61F /* CustomerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE6F3FC22267FDC00F3D61F /* CustomerService.swift */; };
@@ -123,9 +127,13 @@
 		7E4DF74921D9DDD0006747D5 /* CheckoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewController.swift; sourceTree = "<group>"; };
 		7E4DF74B21D9E601006747D5 /* ExtraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraViewController.swift; sourceTree = "<group>"; };
 		7E5748F622234D1B00DF79B3 /* ConfirmOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmOrderViewController.swift; sourceTree = "<group>"; };
+		7EBB74822228A6410009520E /* JockeyOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JockeyOne-Regular.ttf"; sourceTree = "<group>"; };
+		7EBB74832228A6410009520E /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		7ED0F5302228D07000252668 /* OrderCompletedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCompletedViewController.swift; sourceTree = "<group>"; };
 		7EE3B63721F4025700D4D8DB /* elevatedLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = elevatedLogo.png; sourceTree = "<group>"; };
 		7EE6303821DC512B00BE05B5 /* ItemInCartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemInCartTableViewCell.swift; sourceTree = "<group>"; };
 		7EE6303921DC512B00BE05B5 /* ItemInCartTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemInCartTableViewCell.xib; sourceTree = "<group>"; };
+		7EE68678222A760D0053288B /* UITextField+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+extension.swift"; sourceTree = "<group>"; };
 		7EE6F3F82226718500F3D61F /* ShippingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShippingTableViewCell.swift; sourceTree = "<group>"; };
 		7EE6F3FA2226719F00F3D61F /* PaymentInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentInfoTableViewCell.swift; sourceTree = "<group>"; };
 		7EE6F3FC22267FDC00F3D61F /* CustomerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerService.swift; sourceTree = "<group>"; };
@@ -244,6 +252,48 @@
 			path = Checkout;
 			sourceTree = "<group>";
 		};
+		7EBB747B22289E570009520E /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				7EBB747C22289EA40009520E /* Checkout */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
+		7EBB747C22289EA40009520E /* Checkout */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Checkout;
+			sourceTree = "<group>";
+		};
+		7EBB747F2228A4A50009520E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7EBB74802228A4B50009520E /* fonts */,
+				7EEBCEE721A4D9BC00659C9B /* assets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		7EBB74802228A4B50009520E /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				7EBB74812228A6410009520E /* Jockey_One */,
+			);
+			name = fonts;
+			path = "../New Group/fonts";
+			sourceTree = "<group>";
+		};
+		7EBB74812228A6410009520E /* Jockey_One */ = {
+			isa = PBXGroup;
+			children = (
+				7EBB74822228A6410009520E /* JockeyOne-Regular.ttf */,
+				7EBB74832228A6410009520E /* OFL.txt */,
+			);
+			path = Jockey_One;
+			sourceTree = "<group>";
+		};
 		7EE6303721DC510C00BE05B5 /* Shopping Cart */ = {
 			isa = PBXGroup;
 			children = (
@@ -356,9 +406,10 @@
 				7EEBCF8221A5B72400659C9B /* Model */,
 				7EEBCE4E21A496D700659C9B /* DataModel */,
 				7EEBCEE321A4D94100659C9B /* extension */,
+				7EBB747B22289E570009520E /* Errors */,
 				7EEBCEE121A4D94100659C9B /* helper */,
 				7EEBCE3C21A4966100659C9B /* Assets.xcassets */,
-				7EEBCEE721A4D9BC00659C9B /* assets */,
+				7EBB747F2228A4A50009520E /* Resources */,
 				7EEBCE3E21A4966100659C9B /* LaunchScreen.storyboard */,
 				7EEBCE4121A4966100659C9B /* Info.plist */,
 			);
@@ -394,6 +445,7 @@
 				7EEBCEE421A4D94100659C9B /* String+extension.swift */,
 				7EEB1BB821AD829B0049ACFB /* Double+Extension.swift */,
 				7EEB1BBA21AD82AD0049ACFB /* UIColor+extension.swift */,
+				7EE68678222A760D0053288B /* UITextField+extension.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -607,6 +659,7 @@
 				7EEBCF7621A4F80C00659C9B /* ProductListsViewController.swift */,
 				7EEFDB0121AD79BA00AC7098 /* ProductDetailsViewController.swift */,
 				7E4DF74721D9DDC6006747D5 /* CartViewController.swift */,
+				7ED0F5302228D07000252668 /* OrderCompletedViewController.swift */,
 				7E2D834522275CE100A36479 /* Checkout */,
 				7EE6F3F62226706400F3D61F /* ConfirmOrder */,
 				7E4DF74B21D9E601006747D5 /* ExtraViewController.swift */,
@@ -767,6 +820,7 @@
 				7EE3B63821F4025700D4D8DB /* elevatedLogo.png in Resources */,
 				7EEB1BC321AD89510049ACFB /* SB1-1.png in Resources */,
 				7EEBCF6021A4D9BD00659C9B /* P2-1.png in Resources */,
+				7EBB74852228A6410009520E /* OFL.txt in Resources */,
 				7EEBCF6621A4D9BD00659C9B /* P6-1.png in Resources */,
 				7EEBCF6C21A4D9BD00659C9B /* P1-5.png in Resources */,
 				7EEBCE4D21A496CF00659C9B /* clothesProducts.json in Resources */,
@@ -782,6 +836,7 @@
 				7EE6303B21DC512B00BE05B5 /* ItemInCartTableViewCell.xib in Resources */,
 				7EEBCF6A21A4D9BD00659C9B /* P6-5.png in Resources */,
 				7EEBCF4821A4D9BD00659C9B /* T1-3.png in Resources */,
+				7EBB74842228A6410009520E /* JockeyOne-Regular.ttf in Resources */,
 				7EEBCF4D21A4D9BD00659C9B /* T6-1.png in Resources */,
 				7EEBCF6B21A4D9BD00659C9B /* P1-4.png in Resources */,
 				7EEBCE3B21A4965D00659C9B /* Main.storyboard in Resources */,
@@ -801,7 +856,9 @@
 				7EEB1BB521AD81B80049ACFB /* DetailSummaryView.swift in Sources */,
 				7EEB1BB921AD829B0049ACFB /* Double+Extension.swift in Sources */,
 				7EEBCEE521A4D94100659C9B /* Utility.swift in Sources */,
+				7EE68679222A760D0053288B /* UITextField+extension.swift in Sources */,
 				7EECC4C721B769E800ABE1E9 /* UIButton+extension.swift in Sources */,
+				7ED0F5312228D07000252668 /* OrderCompletedViewController.swift in Sources */,
 				7EEBCF8621A5B7A600659C9B /* ProductTableViewCell.swift in Sources */,
 				7EE7770721EB13A1009A1BB4 /* Constants.swift in Sources */,
 				7EECC4C321B73ADC00ABE1E9 /* DetailSummary.swift in Sources */,

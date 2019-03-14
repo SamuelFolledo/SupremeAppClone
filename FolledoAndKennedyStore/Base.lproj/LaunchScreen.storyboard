@@ -19,10 +19,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L03-uj-3bK">
-                                <rect key="frame" x="62.5" y="232.5" width="250" height="222"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="elevatedLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="f02-t2-paj">
-                                        <rect key="frame" x="5" y="0.0" width="240" height="222"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ELEVATED ERA LOGO" translatesAutoresizingMaskIntoConstraints="NO" id="f02-t2-paj">
+                                        <rect key="frame" x="10" y="0.0" width="355" height="667"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -30,7 +30,7 @@
                                     <constraint firstItem="f02-t2-paj" firstAttribute="centerX" secondItem="L03-uj-3bK" secondAttribute="centerX" id="3SP-CU-KCG"/>
                                     <constraint firstItem="f02-t2-paj" firstAttribute="height" secondItem="L03-uj-3bK" secondAttribute="height" id="Wf6-Qd-G62"/>
                                     <constraint firstItem="f02-t2-paj" firstAttribute="centerY" secondItem="L03-uj-3bK" secondAttribute="centerY" id="d5x-f5-txC"/>
-                                    <constraint firstItem="f02-t2-paj" firstAttribute="width" secondItem="L03-uj-3bK" secondAttribute="width" constant="-10" id="n5h-ew-KDU"/>
+                                    <constraint firstItem="f02-t2-paj" firstAttribute="width" secondItem="L03-uj-3bK" secondAttribute="width" constant="-20" id="n5h-ew-KDU"/>
                                 </constraints>
                             </view>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="In1-DA-GS5">
@@ -44,11 +44,11 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="L03-uj-3bK" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="1vN-1y-aj8"/>
+                            <constraint firstItem="L03-uj-3bK" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="0SV-qS-INB"/>
+                            <constraint firstAttribute="trailing" secondItem="L03-uj-3bK" secondAttribute="trailing" id="2rV-A0-QMY"/>
+                            <constraint firstItem="L03-uj-3bK" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="Mnc-Dc-7o6"/>
                             <constraint firstItem="In1-DA-GS5" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="1.7" id="c1D-Rt-OAo"/>
-                            <constraint firstItem="L03-uj-3bK" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="1:3" id="giR-7F-bm1"/>
-                            <constraint firstItem="L03-uj-3bK" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="jbJ-5o-Mdo"/>
-                            <constraint firstItem="L03-uj-3bK" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="2:3" id="wQE-lU-CUp"/>
+                            <constraint firstAttribute="bottom" secondItem="L03-uj-3bK" secondAttribute="bottom" id="mw5-x3-4LL"/>
                             <constraint firstItem="In1-DA-GS5" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="xKG-bZ-YYH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -60,6 +60,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="elevatedLogo.png" width="5296" height="1290"/>
+        <image name="ELEVATED ERA LOGO" width="1764.47998046875" height="255.83999633789062"/>
     </resources>
 </document>

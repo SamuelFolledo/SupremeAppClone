@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="JockeyOne-Regular.ttf">
+            <string>JockeyOne-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -30,7 +35,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X6o-lF-DaB" userLabel="navigation View">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44.5"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="elevatedLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="wkc-r5-wEJ">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ELEVATED ERA LOGO" translatesAutoresizingMaskIntoConstraints="NO" id="wkc-r5-wEJ">
                                         <rect key="frame" x="8" y="6.5" width="120" height="30"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -49,11 +54,11 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WHC-ct-xbo">
-                                        <rect key="frame" x="277" y="8" width="90" height="27"/>
+                                        <rect key="frame" x="277" y="5.5" width="90" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" priority="500" constant="90" id="AYE-VY-NrN"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
+                                        <fontDescription key="fontDescription" name="JockeyOne-Regular" family="Jockey One" pointSize="14"/>
                                         <state key="normal" title="CHECK OUT"/>
                                         <connections>
                                             <action selector="checkoutButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="R1N-hB-2pd"/>
@@ -258,11 +263,11 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TR5-8V-oAm">
-                                        <rect key="frame" x="277" y="8" width="90" height="27"/>
+                                        <rect key="frame" x="277" y="5.5" width="90" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" priority="500" constant="90" id="OyY-fK-y0v"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
+                                        <fontDescription key="fontDescription" name="JockeyOne-Regular" family="Jockey One" pointSize="14"/>
                                         <state key="normal" title="CHECK OUT"/>
                                         <connections>
                                             <action selector="checkoutButtonTapped:" destination="ZM6-hg-LE9" eventType="touchUpInside" id="xZi-fy-9Bb"/>
@@ -278,7 +283,7 @@
                                                     <action selector="backButtonTapped:" destination="ZM6-hg-LE9" eventType="touchUpInside" id="Fgw-sV-Pqi"/>
                                                 </connections>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="elevatedLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="ASj-3p-IbM">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ELEVATED ERA LOGO" translatesAutoresizingMaskIntoConstraints="NO" id="ASj-3p-IbM">
                                                 <rect key="frame" x="26" y="0.0" width="120" height="30"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -526,11 +531,11 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ydI-qq-eEP">
-                                        <rect key="frame" x="277" y="8" width="90" height="27"/>
+                                        <rect key="frame" x="277" y="5.5" width="90" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" priority="500" constant="90" id="QWi-AI-Stj"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
+                                        <fontDescription key="fontDescription" name="JockeyOne-Regular" family="Jockey One" pointSize="14"/>
                                         <state key="normal" title="CHECK OUT"/>
                                         <connections>
                                             <action selector="checkoutButtonTapped:" destination="snv-s3-5ft" eventType="touchUpInside" id="fxm-qT-hPa"/>
@@ -547,7 +552,7 @@
                                                     <action selector="backButtonTapped:" destination="ZM6-hg-LE9" eventType="touchUpInside" id="Hjg-ZA-GH1"/>
                                                 </connections>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="elevatedLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="ktK-RJ-kJA">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ELEVATED ERA LOGO" translatesAutoresizingMaskIntoConstraints="NO" id="ktK-RJ-kJA">
                                                 <rect key="frame" x="26" y="0.0" width="120" height="30"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -602,7 +607,7 @@
                                                                 <rect key="frame" x="8" y="35" width="359" height="15"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VNe-2i-xsm">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="251" height="15"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="359" height="15"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="15" id="RAq-ZA-a87"/>
                                                                         </constraints>
@@ -610,8 +615,8 @@
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EE0-YR-PlO" customClass="UserRating" customModule="FolledoAndKennedyStore" customModuleProvider="target">
-                                                                        <rect key="frame" x="259" y="0.0" width="100" height="15"/>
+                                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EE0-YR-PlO" customClass="UserRating" customModule="FolledoAndKennedyStore" customModuleProvider="target">
+                                                                        <rect key="frame" x="367" y="0.0" width="100" height="15"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="100" id="16l-f1-1MJ"/>
@@ -1088,11 +1093,11 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IZ1-Ie-8eV">
-                                        <rect key="frame" x="277" y="8" width="90" height="27"/>
+                                        <rect key="frame" x="277" y="5.5" width="90" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" priority="500" constant="90" id="Nss-Ly-siS"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
+                                        <fontDescription key="fontDescription" name="JockeyOne-Regular" family="Jockey One" pointSize="14"/>
                                         <state key="normal" title="CHECK OUT"/>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Tpp-YQ-OaG">
@@ -1270,6 +1275,7 @@
     </scenes>
     <resources>
         <image name="Back" width="25" height="25"/>
+        <image name="ELEVATED ERA LOGO" width="1764.47998046875" height="255.83999633789062"/>
         <image name="P1-1.png" width="268" height="570"/>
         <image name="T1-1.png" width="476" height="556"/>
         <image name="T1-2.png" width="617" height="680"/>

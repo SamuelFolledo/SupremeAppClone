@@ -36,7 +36,7 @@ class ShippingTableViewCell: UITableViewCell {
 	
 	internal func configureCell() { //PB ep95 2mins
 		if let customer = shoppingCart.customer, let shippingAddress = shoppingCart.shippingAddress { //PB ep95 4mins unwrap customer and shippingAddress
-			customerNameLabel.text = customer.name //PB ep95 4mins
+			customerNameLabel.text = "\((customer.firstName)!) \((customer.lastName)!)" //PB ep95 4mins
 			phoneLabel.text = customer.phone //PB ep95 4mins
 			address1Label.text = shippingAddress.address1 //PB ep95 5mins
 			
