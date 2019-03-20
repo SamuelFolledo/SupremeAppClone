@@ -631,7 +631,7 @@
                                                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="y3v-sb-ypB">
                                                                 <rect key="frame" x="0.0" y="52" width="300" height="300"/>
                                                                 <subviews>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="T1-1.png" translatesAutoresizingMaskIntoConstraints="NO" id="OOb-OI-2u3">
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="T1-1-White.png" translatesAutoresizingMaskIntoConstraints="NO" id="OOb-OI-2u3">
                                                                         <rect key="frame" x="0.0" y="2" width="300" height="298"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
@@ -666,7 +666,7 @@
                                                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                             <subviews>
-                                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="T1-2.png" translatesAutoresizingMaskIntoConstraints="NO" id="LQf-Bc-QAQ">
+                                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="T1-2-White.png" translatesAutoresizingMaskIntoConstraints="NO" id="LQf-Bc-QAQ">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 </imageView>
@@ -795,7 +795,7 @@
                                                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                             <subviews>
-                                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="P1-1.png" translatesAutoresizingMaskIntoConstraints="NO" id="eF5-PB-Cy8">
+                                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="P1-1-Black.png" translatesAutoresizingMaskIntoConstraints="NO" id="eF5-PB-Cy8">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                                                 </imageView>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bON-8r-sA0">
@@ -1276,9 +1276,9 @@
     <resources>
         <image name="Back" width="25" height="25"/>
         <image name="ELEVATED ERA LOGO" width="1764.47998046875" height="255.83999633789062"/>
-        <image name="P1-1.png" width="268" height="570"/>
-        <image name="T1-1.png" width="476" height="556"/>
-        <image name="T1-2.png" width="617" height="680"/>
+        <image name="P1-1-Black.png" width="268" height="570"/>
+        <image name="T1-1-White.png" width="476" height="556"/>
+        <image name="T1-2-White.png" width="617" height="680"/>
         <image name="elevatedLogo.png" width="5296" height="1290"/>
     </resources>
 </document>

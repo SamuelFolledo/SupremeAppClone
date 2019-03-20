@@ -293,7 +293,7 @@ extension ProductDetailsViewController: UICollectionViewDataSource {
          let productImageName = productOtherImages[indexPath.row]
          
          cell.productImageView.image = Utility.image(withName: productImageName, andType: "png")
-         cell.productLabel.text = "\(productImageName)"
+         cell.productLabel.text = "\(productImageName.getProductColor())" //only display the color name
 //         setupCell(cell: cell, product: self.product!)
          
          var borderColor: CGColor! = UIColor.clear.cgColor
@@ -317,7 +317,7 @@ extension ProductDetailsViewController: UICollectionViewDataSource {
          let cell = collectionView.dequeueReusableCell(withReuseIdentifier: productsCellId, for: indexPath) as! ProductColorsCollectionViewCell //PB ep11
          let product = clothesCollection[indexPath.row] //PB ep11 23mins
          cell.productImageView.image = Utility.image(withName: product.mainImage, andType: "png") //PB ep11 23mins
-         cell.productLabel.text = "\(String(describing: product.name!))"
+         cell.productLabel.text = "\(String(describing: product.name!.getProductSKU()))"
          
          var borderColor: CGColor! = UIColor.clear.cgColor
          var borderWidth: CGFloat = 0

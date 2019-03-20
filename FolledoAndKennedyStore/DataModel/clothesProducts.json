@@ -8,7 +8,7 @@
       "ageGroup": "36 months - 21 years",
       "dimension": "54.3 x 30.7 x 56.7 inches",
       "images": [
-         "T1-1.png", "T1-2.png", "T1-3.png", "T1-4.png", "T1-5.png"
+         "T1-1-White.png", "T1-2-White.png", "T1-3-White.png", "T1-4-Camo.png", "T1-5-LightGray.png", "T1-6-Black", "T1-7-Blue"
       ],
       "colors": ["black", "white", "blue", "red", "yellow"],
       "manufacturerId": 1,
@@ -31,7 +31,7 @@
       "ageGroup": "24 months - 21 years",
       "dimension": "17.2 x 6.6 x 13 inches",
       "images": [
-         "T2-1.png", "T2-2.png", "T2-3.png", "T2-4.png", "T2-5.png"
+         "T2-1-Panda.png", "T2-2-Soldier.png", "T2-3-Anchor.png", "T2-4-Lady.png", "T2-5-Tiger.png"
       ],
       "colors": ["black", "white", "blue", "red", "yellow"],
       "manufacturerId": 2,
@@ -52,7 +52,7 @@
       "ageGroup": "4 - 21 years",
       "dimension": "8.5 x 6 x 10.8 inches",
       "images": [
-         "T3-1.png", "T3-2.png", "T3-3.png", "T3-4.png", "T3-5.png"
+         "T3-1-Black&Brown.png", "T3-2-Gray.png", "T3-3-White&Black.png", "T3-4-Red.png", "T3-5-Blue&Pink.png"
       ],
       "colors": ["black", "white", "blue", "red", "yellow"],
       "manufacturerId": 3,
@@ -74,7 +74,7 @@
       "name": "Supreme Savage Black Premium Athletic Fit T-Shirt",
       "ageGroup": "36 months - 18 years",
       "dimension": "20 x 8 x 16 inches",
-      "images": [ "T4-1.png", "T4-2.png" ],
+      "images": [ "T4-1-Black.png", "T4-2-Black.png" ],
       "colors": ["black", "white"],
       "manufacturerId": 2,
       "manufacturerName": "Supreme",
@@ -95,7 +95,7 @@
       "name": "SCREENSHOTBRAND Mens Hip Hop Longline Premium Tee - Pullover Hooded Fashion T-shirt",
       "ageGroup": "6 years and up",
       "dimension": "11.5 x 9.1 x 3.8 inches",
-      "images": [ "T5-1.png", "T5-2.png", "T5-3.png", "T5-4.png", "T5-5.png" ],
+      "images": [ "T5-1-Brown.png", "T5-2-Blue.png", "T5-3-White.png", "T5-4-Black.png", "T5-5-Black&Blue.png" ],
       "colors": ["black", "white", "blue", "red", "yellow"],
       "manufacturerId": 4,
       "manufacturerName": "Supreme",
@@ -114,7 +114,7 @@
       "name": "tees geek Supreme Living Legend Established 1937 81st Birthday Gifts for Men T-Shirt",
       "ageGroup": "12 month - 18 years",
       "dimension": "24 x 10 x 13 inches",
-      "images": [ "T6-1.png", "T6-2.png", "T6-3.png" ],
+      "images": [ "T6-1-Black.png", "T6-2-Black.png", "T6-3-Black.png" ],
       "colors": ["black", "white", "blue"],
       "manufacturerId": 5,
       "manufacturerName": "Supreme",
@@ -134,7 +134,7 @@
       "name": "Supreme Savage Box Logo Inspired Hoodie - 21 Savage",
       "ageGroup": "12 month - 28 years",
       "dimension": "24 x 10 x 13 inches",
-      "images": [ "T7-1.png" ],
+      "images": [ "T7-1-Blue.png" ],
       "colors": ["dark blue"],
       "manufacturerId": 6,
       "manufacturerName": "Supreme",
@@ -153,7 +153,7 @@
       "name": "AGORA Mt Fuji Pullover Jacket",
       "ageGroup": "12 month - 21 years",
       "dimension": "24 x 10 x 13 inches",
-      "images": [ "T8-1.png", "T8-2.png", "T8-3.png" ],
+      "images": [ "T8-1-Red & Black.png", "T8-2-Red & Black.png", "T8-3-Red & Black.png" ],
       "colors": ["black", "white", "blue"],
       "manufacturerId": 6,
       "manufacturerName": "Supreme",
@@ -179,7 +179,7 @@
       "name": "adidas Youth Soccer Tiro 17 Training Pants",
       "ageGroup": "12 month - 21 years",
       "dimension": "18 x 10 x 16 inches",
-      "images": [ "P1-1.png", "P1-2.png", "P1-3.png" ],
+      "images": [ "P1-1-Black.png", "P1-2-Blue.png", "P1-3-Red.png", "P1-4-White.png", "P1-5-Black&Green.png" ],
       "colors": ["black", "white", "blue"],
       "manufacturerId": 6,
       "manufacturerName": "Adidas",
@@ -200,7 +200,7 @@
       "name": "ToBeInStyle Women's Solid Print French Terry Jogger Pants",
       "ageGroup": "48 month - 28 years",
       "dimension": "22 x 11 x 16 inches",
-      "images": [ "P2-1.png", "P2-2.png", "P2-3.png" ],
+      "images": [ "P2-1-Yellow.png", "P2-2-Burgundy.png", "P2-3-Gray.png", "P2-4-LightGray.png", "P2-5-LightPink.png" ],
       "colors": ["black", "white", "blue"],
       "manufacturerId": 6,
       "manufacturerName": "ToBeInStyle",
@@ -219,7 +219,7 @@
       "name": "The Children's Place Baby Boys' Pull on Jeans",
       "ageGroup": "4 years - 21 years",
       "dimension": "34 x 14 x 12 inches",
-      "images": [ "P3-1.png", "P3-2.png", "P3-3.png" ],
+      "images": [ "P3-1-Blue.png", "P3-2-Blue.png", "P3-3-DarkBlue.png", "P3-4-DarkBlue.png" ],
       "colors": ["black", "white", "blue"],
       "manufacturerId": 6,
       "manufacturerName": "Old Navy",
@@ -238,7 +238,7 @@
       "name": "Fox Racing 2018 180 RACE PANT RED- 32",
       "ageGroup": "18 month - 24 years",
       "dimension": "15.8 x 3.9 x 7.9 inches",
-      "images": [ "P4-1.png", "P4-2.png", "P4-3.png" ],
+      "images": [ "P4-1-Black.png", "P4-2-Blue.png", "P4-3-Purple.png", "P4-4-Red.png" ],
       "colors": ["black", "white", "blue"],
       "manufacturerId": 6,
       "manufacturerName": "Fox Racing",
@@ -258,7 +258,7 @@
       "name": "Hemoon Men's Running Trousers",
       "ageGroup": "24 month - 25 years",
       "dimension": "11 x 7.5 x 3.5 inches",
-      "images": [ "P5-1.png", "P5-2.png", "P5-3.png" ],
+      "images": [ "P5-1-Red.png", "P5-2-Black&Gray.png", "P5-3-DarkGreen.png", "P5-4-LightGray.png", "P5-5-Black.png" ],
       "colors": ["black", "white", "blue"],
       "manufacturerId": 6,
       "manufacturerName": "Hemoon",
@@ -277,7 +277,7 @@
       "name": "WT02 Men's Jogger Pants in Basic Solid Colors and Stretch Twill Fabric",
       "ageGroup": "6 month - 23 years",
       "dimension": "21 x 11 x 12 inches",
-      "images": [ "P6-1.png", "P6-2.png", "P6-3.png" ],
+      "images": [ "P6-1-Red.png", "P6-2-White.png", "P6-3-Blue.png", "P6-4-Black.png", "P6-5-Brown.png" ],
       "colors": ["black", "white", "blue"],
       "manufacturerId": 6,
       "manufacturerName": "WT02",
@@ -299,9 +299,7 @@
       "name": "Elevated. logo Black T-Shirt",
       "ageGroup": "36 months - 21 years",
       "dimension": "54.3 x 30.7 x 56.7 inches",
-      "images": [
-         "SH1-1.png"
-      ],
+      "images": [ "SH1-1-WhiteLogo.png" ],
       "colors": ["black"],
       "manufacturerId": 1,
       "manufacturerName": "Elevated.",
@@ -323,9 +321,7 @@
       "name": "Reflect Elevated. Logo Black T-Shirt",
       "ageGroup": "36 months - 21 years",
       "dimension": "54.3 x 30.7 x 56.7 inches",
-      "images": [
-         "SH2-1.png"
-      ],
+      "images": [ "SH2-1-LimitedLogo.png" ],
       "colors": ["black"],
       "manufacturerId": 1,
       "manufacturerName": "Elevated.",
@@ -350,9 +346,7 @@
       "name": "Elevated. logo Black T-Shirt",
       "ageGroup": "36 months - 21 years",
       "dimension": "54.3 x 30.7 x 56.7 inches",
-      "images": [
-         "SH1-1.png"
-      ],
+      "images": [ "SH1-1-WhiteLogo.png" ],
       "colors": ["black"],
       "manufacturerId": 1,
       "manufacturerName": "Elevated.",
@@ -374,9 +368,7 @@
       "name": "Reflect Elevated. Logo Black T-Shirt",
       "ageGroup": "36 months - 21 years",
       "dimension": "54.3 x 30.7 x 56.7 inches",
-      "images": [
-         "SH2-1.png"
-      ],
+      "images": [ "SH2-1-LimitedLogo.png" ],
       "colors": ["black"],
       "manufacturerId": 1,
       "manufacturerName": "Elevated.",
@@ -399,7 +391,7 @@
       "ageGroup": "36 months - 21 years",
       "dimension": "54.3 x 30.7 x 56.7 inches",
       "images": [
-         "JA1-1.png"
+         "JA1-1-Black.png"
       ],
       "colors": ["black"],
       "manufacturerId": 1,
@@ -423,7 +415,7 @@
       "ageGroup": "36 months - 21 years",
       "dimension": "54.3 x 30.7 x 56.7 inches",
       "images": [
-         "HD1-1.png"
+         "HD1-1-TriangleLogo.png"
       ],
       "colors": ["black"],
       "manufacturerId": 1,
@@ -447,7 +439,7 @@
       "ageGroup": "36 months - 21 years",
       "dimension": "54.3 x 30.7 x 56.7 inches",
       "images": [
-         "SS1-1.png"
+         "SS1-1-TriangleLogo.png"
       ],
       "colors": ["black"],
       "manufacturerId": 1,
@@ -471,7 +463,7 @@
       "ageGroup": "36 months - 21 years",
       "dimension": "54.3 x 30.7 x 56.7 inches",
       "images": [
-         "TP1-1.png"
+         "TP1-1-Black&Gold.png"
       ],
       "colors": ["black"],
       "manufacturerId": 1,
@@ -495,7 +487,7 @@
       "ageGroup": "36 months - 21 years",
       "dimension": "54.3 x 30.7 x 56.7 inches",
       "images": [
-         "SB1-1.png"
+         "SB1-1-Black.png"
       ],
       "colors": ["black"],
       "manufacturerId": 1,

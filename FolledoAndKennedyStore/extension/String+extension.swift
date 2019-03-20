@@ -32,7 +32,33 @@ extension String { //PB ep9 23mins
 	
 	func trimmedString() -> String { //method that removes string's left and right white spaces and new lines
 		let newWord: String = self.trimmingCharacters(in: .whitespacesAndNewlines)
-		print(newWord)
+//		print(newWord)
 		return newWord
+	}
+	
+//	func getProductName() -> String {
+//		let name: String = self.
+//	}
+	
+	func getProductColor() -> String { //method that will convert the imageName and return its detail
+		var color: String = ""
+		if self.contains("-"), let index = self.lastIndex(of: "-") {
+			let distance = self.distance(from: self.endIndex, to: index)
+			let fromIndex = self.index(self.endIndex, offsetBy: distance + 1) //move it to the right to not include the dash
+			color = String(self[fromIndex...]).stripFileExtension() //return the detail and strip any extension on the image's name
+			return color
+		}
+		return color
+	}
+	
+	func getProductSKU() -> String {
+		var sku = ""
+		if self.contains("-"), let index = self.lastIndex(of: "-") {
+			let distance = self.distance(from: self.endIndex, to: index)
+			
+			let endOfDomain = self.index(self.endIndex, offsetBy: distance - 1) //move the it to the left to not include the dash
+			sku = String(self[...endOfDomain])
+		}
+		return sku
 	}
 }
