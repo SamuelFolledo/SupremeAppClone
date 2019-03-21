@@ -23,7 +23,7 @@ class ItemInCartTableViewCell: UITableViewCell { //PB ep79 1mins also created a 
    
    //MARK: Properties
    var shoppingCart = ShoppingCart.sharedInstance //PB ep78 12mins
-   var item: (product: Product, quantity: Int)? { //PB ep78 12mins item that we will show in the cell. This will be passed and set by the cart TVC
+   var item: (product: Product, quantity: Int, color: String)? { //PB ep78 12mins item that we will show in the cell. This will be passed and set by the cart TVC
       didSet { //PB ep78 12mins once this item is being set by the CartTVC we're going to refresh the cell to show the latest item being passed in
          if let currentItem = item { //PB ep78 13mins
             refreshCell(currentItem: currentItem) //PB ep78 16mins
@@ -75,7 +75,7 @@ class ItemInCartTableViewCell: UITableViewCell { //PB ep79 1mins also created a 
    
    
 //MARK: Private functions
-   private func refreshCell(currentItem: (product: Product, quantity: Int)) { //PB ep78 14mins once we get the currentItem, we can immediately update our views
+   private func refreshCell(currentItem: (product: Product, quantity: Int, color: String)) { //PB ep78 14mins once we get the currentItem, we can immediately update our views
       productImageView.image = Utility.image(withName: currentItem.product.mainImage, andType: "png") //PB ep78 14mins
       productNameLabel.text = currentItem.product.name //PB ep78 14mins
       guard let manufacturerString: String = currentItem.product.manufacturer?.name else { return }
