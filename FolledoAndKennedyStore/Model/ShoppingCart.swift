@@ -17,7 +17,7 @@ import Foundation
 
 class ShoppingCart { //PB ep75 0mins created as a singleton, meaning only one instant can exist at any given time. So we are not reinitializing this cart as well as keep track
 	
-	var items = [(product: Product, quantity: Int, color: String)]() //PB ep75 3mins items will be an array of tupples as they can be more than 1 item that must have a product and a quantity
+	var items = [(product: Product, quantity: Int)]() //PB ep75 3mins items will be an array of tupples as they can be more than 1 item that must have a product and a quantity
 	var customer: Customer? //PB ep90 4mins added for assigning the cart to the right customer
 	var creditCard: CreditCard? //PB ep90 4mins
 	var shippingAddress: Address? //PB ep90 4mins
