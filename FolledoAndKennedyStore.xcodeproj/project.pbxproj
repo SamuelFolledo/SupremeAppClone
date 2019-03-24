@@ -250,21 +250,6 @@
 			path = Checkout;
 			sourceTree = "<group>";
 		};
-		7EBB747B22289E570009520E /* Errors */ = {
-			isa = PBXGroup;
-			children = (
-				7EBB747C22289EA40009520E /* Checkout */,
-			);
-			path = Errors;
-			sourceTree = "<group>";
-		};
-		7EBB747C22289EA40009520E /* Checkout */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Checkout;
-			sourceTree = "<group>";
-		};
 		7EBB747F2228A4A50009520E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -319,13 +304,6 @@
 			path = ConfirmOrderCells;
 			sourceTree = "<group>";
 		};
-		7EE7770121EAFB4C009A1BB4 /* Checkout */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Checkout;
-			sourceTree = "<group>";
-		};
 		7EEB1BB221AD818F0049ACFB /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -371,7 +349,6 @@
 				7EEBCF8221A5B72400659C9B /* Model */,
 				7EEBCE4E21A496D700659C9B /* DataModel */,
 				7EEBCEE321A4D94100659C9B /* extension */,
-				7EBB747B22289E570009520E /* Errors */,
 				7EEBCEE121A4D94100659C9B /* helper */,
 				7EEBCE3C21A4966100659C9B /* Assets.xcassets */,
 				7EBB747F2228A4A50009520E /* Resources */,
@@ -433,7 +410,6 @@
 		7EEBCF8121A5B70300659C9B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				7EE7770121EAFB4C009A1BB4 /* Checkout */,
 				7EE6303721DC510C00BE05B5 /* Shopping Cart */,
 				7EEB1BB221AD818F0049ACFB /* Home */,
 				7EEB1BB321AD81A30049ACFB /* Details */,
