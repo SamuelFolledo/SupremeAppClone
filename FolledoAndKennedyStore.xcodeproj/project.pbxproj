@@ -15,6 +15,7 @@
 		7E4DF74A21D9DDD0006747D5 /* CheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4DF74921D9DDD0006747D5 /* CheckoutViewController.swift */; };
 		7E4DF74C21D9E602006747D5 /* ExtraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4DF74B21D9E601006747D5 /* ExtraViewController.swift */; };
 		7E5748F722234D1B00DF79B3 /* ConfirmOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5748F622234D1B00DF79B3 /* ConfirmOrderViewController.swift */; };
+		7EA08F122264E07F00F0E974 /* Checkout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EA08F112264E07F00F0E974 /* Checkout.storyboard */; };
 		7EBB74842228A6410009520E /* JockeyOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7EBB74822228A6410009520E /* JockeyOne-Regular.ttf */; };
 		7EBB74852228A6410009520E /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7EBB74832228A6410009520E /* OFL.txt */; };
 		7ED0F5312228D07000252668 /* OrderCompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED0F5302228D07000252668 /* OrderCompletedViewController.swift */; };
@@ -126,6 +127,7 @@
 		7E4DF74921D9DDD0006747D5 /* CheckoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewController.swift; sourceTree = "<group>"; };
 		7E4DF74B21D9E601006747D5 /* ExtraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraViewController.swift; sourceTree = "<group>"; };
 		7E5748F622234D1B00DF79B3 /* ConfirmOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmOrderViewController.swift; sourceTree = "<group>"; };
+		7EA08F112264E07F00F0E974 /* Checkout.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Checkout.storyboard; sourceTree = "<group>"; };
 		7EBB74822228A6410009520E /* JockeyOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JockeyOne-Regular.ttf"; sourceTree = "<group>"; };
 		7EBB74832228A6410009520E /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		7ED0F5302228D07000252668 /* OrderCompletedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCompletedViewController.swift; sourceTree = "<group>"; };
@@ -342,6 +344,7 @@
 			children = (
 				7EEBCE3521A4965D00659C9B /* AppDelegate.swift */,
 				7EEBCE3921A4965D00659C9B /* Main.storyboard */,
+				7EA08F112264E07F00F0E974 /* Checkout.storyboard */,
 				7E4DF73D21D9DAEF006747D5 /* CartSB.storyboard */,
 				7E4DF74421D9DC33006747D5 /* CheckoutSB.storyboard */,
 				7EEBCF8021A5B6F100659C9B /* Controllers */,
@@ -760,6 +763,7 @@
 				7EBB74852228A6410009520E /* OFL.txt in Resources */,
 				7EED1AFA2242CC2F007E4140 /* T1-2-White.png in Resources */,
 				7EED1B122242CC2F007E4140 /* P5-2-Black&Gray.png in Resources */,
+				7EA08F122264E07F00F0E974 /* Checkout.storyboard in Resources */,
 				7EED1AFD2242CC2F007E4140 /* T6-3-Black.png in Resources */,
 				7EED1AF62242CC2F007E4140 /* T1-5-LightGray.png in Resources */,
 				7EED1AEA2242CC2F007E4140 /* T2-3-Anchor.png in Resources */,
