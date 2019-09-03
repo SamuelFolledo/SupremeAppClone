@@ -28,7 +28,7 @@ class ShoppingCart { //PB ep75 0mins created as a singleton, meaning only one in
 	
 	
 	//add
-	internal func add(product: Product, quantity: Int, color: String) { //PB ep75 2mins
+	internal func add(product: Product, quantity: Int) { //PB ep75 2mins
 		if let index = find(product: product) { //PB ep75 9mins if it exists in the cart, add the qty to the current qty//PB ep75 5mins check if we have that product in our items array already //we need to check if user edits the quantity, instead of adding a new product and quantity, we should just edit the quantity
 			let newQty = items[index].quantity + quantity //PB ep75 10mins
 			items[index] = (product, newQty) //PB ep75 10mins the item which contains the index of the product we found will have its quantity incremented instead
@@ -40,7 +40,7 @@ class ShoppingCart { //PB ep75 0mins created as a singleton, meaning only one in
 	
 	
 	//update
-	internal func update(product: Product, quantity: Int, color: String) { //PB ep75 12mins update method for our ShoppingCart
+	internal func update(product: Product, quantity: Int) { //PB ep75 12mins update method for our ShoppingCart
 		if let index = find(product: product) { //PB ep75 12mins
 			items[index] = (product, quantity) //PB ep75 13mins product is the product we want to update, and the quantity will be the new quantity
 		}

@@ -437,7 +437,12 @@ class CheckoutViewController: UIViewController {
 		}
 	}
 	private func saveCustomerAddress() { //method that will save the user in UserDefaults
-		let textFieldValues: [String] = ["\(firstNameTextField.text!.trimmedString())", "\(lastNameTextField.text!.trimmedString())", "\(emailTextField.text!.trimmedString())", "\(telephoneTextField.text!.trimmedString())", "\(addressTextField.text!.trimmedString())", "\(aptUnitTextField.text!.trimmedString())", "\(zipTextField.text!.trimmedString())", "\(cityTextField.text!.trimmedString())", "\(stateTextField.text!.trimmedString())", "\(countryTextField.text!.trimmedString())"]
+        var aptUnitString: String = ""
+        if aptUnitTextField.text != "" || aptUnitTextField.text != " " || !aptUnitTextField.text!.isEmpty {
+            aptUnitString = aptUnitTextField.text!
+        }
+        
+		let textFieldValues: [String] = ["\(firstNameTextField.text!.trimmedString())", "\(lastNameTextField.text!.trimmedString())", "\(emailTextField.text!.trimmedString())", "\(telephoneTextField.text!.trimmedString())", "\(addressTextField.text!.trimmedString())", aptUnitString, "\(zipTextField.text!.trimmedString())", "\(cityTextField.text!.trimmedString())", "\(stateTextField.text!.trimmedString())", "\(countryTextField.text!.trimmedString())"]
 		
 		self.rememberAddressButtonValue = true
 		self.rememberAddressButton.setImage(UIImage(named: "check-box"), for: .normal)

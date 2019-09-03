@@ -222,7 +222,7 @@ class ProductDetailsViewController: UIViewController, UITextFieldDelegate {
 	
 	
 	@IBAction func checkoutButtonTapped(_ sender: Any) {
-		let viewController: UIViewController = UIStoryboard(name: "CheckoutSB", bundle: nil).instantiateViewController(withIdentifier: "checkoutVC")
+		let viewController: UIViewController = UIStoryboard(name: "Checkout", bundle: nil).instantiateViewController(withIdentifier: "checkoutVC")
 		self.present(viewController, animated: false, completion: nil)
 	}
 	
