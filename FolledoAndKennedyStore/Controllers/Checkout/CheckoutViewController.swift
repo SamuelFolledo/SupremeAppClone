@@ -162,7 +162,10 @@ class CheckoutViewController: UIViewController {
 		agreeButton.setImage(UIImage(named: agreeButtonImage), for: .normal)
 //		agreeButton.setBackgroundImage(UIImage(named: agreeButtonImage), for: .normal)
 		agreeButton.tintColor = .black
-		
+        print("Shopping Cart Total Item = \(shoppingCart.totalItem())")
+        let totalItem: String = String(shoppingCart.totalItem())
+        cartButton.setTitle(totalItem, for: .normal)
+        
 		let imageName: String = captchaValue ? "captcha2" : "captcha"
 		self.captchaImageView.image = UIImage(named: imageName)
 		
