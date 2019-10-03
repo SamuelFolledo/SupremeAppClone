@@ -4,8 +4,7 @@ A ecommerce store app, inspired by Supreme store app, with extra features I deve
 
 ## Screenshots of how the app looks like
 ### Launch Screen
-![Launch screenshot](/photos/launch.PNG){:width="400px" height="700px"}
-<img src="https://github.com/SamuelFolledo/SupremeAppClone/blob/master/photos/launch.PNG" width="100" height="200">
+<img src="https://github.com/SamuelFolledo/SupremeAppClone/blob/master/photos/launch.PNG" width="621" height="1104">
 
 ---
 
