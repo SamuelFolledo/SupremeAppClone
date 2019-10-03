@@ -4,7 +4,7 @@ A ecommerce store app, inspired by Supreme store app, with extra features I deve
 
 ## Screenshots of how the app looks like
 ### Launch Screen
-![Launch screenshot](/photos/launch.PNG)
+![Launch screenshot](/photos/launch.PNG = 100x200)
 
 ---
 
