@@ -21,3 +21,5 @@ A ecommerce store app, inspired by Supreme store app, with extra features I deve
 ### Checkout and Cart Screen
 - Unlike Supreme App store, you can customize the quantity in the cart as well as save user information and address without the need of creating an account
 ![Checkout and Cart Screen](/photos/checkout-cart.png)
+
+License under the [MIT License](LICENSE)
